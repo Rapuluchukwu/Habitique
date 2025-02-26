@@ -758,10 +758,10 @@ header p span {
 /* Welcome to Gallery section styling */
 #featured-gallery {
   padding: 60px 0;
-  background-color: #f8f8f8; 
+  background-color: #f8f8f8;
 }
 
- .page-container {
+.page-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -794,11 +794,11 @@ header p span {
   #featured-gallery {
     padding: 40px 0;
   }
-  
+
   .gallery-heading {
     font-size: 2rem;
   }
-  
+
   .gallery-intro {
     font-size: 1rem;
   }
@@ -808,11 +808,11 @@ header p span {
   #featured-gallery {
     padding: 30px 0;
   }
-  
+
   .gallery-heading {
     font-size: 1.75rem;
   }
-  
+
   .page-container {
     padding: 0 15px;
   }
@@ -1034,4 +1034,102 @@ header p span {
 
 .heart-btn.liked svg path {
   fill: #ff3b5c;
+}
+
+
+/* BOOK A CONSULTATION styling */
+.book-consultation {
+  background-color: #8B4513; 
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.book-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.consultation-content {
+  flex: 1;
+  text-align: center;
+  padding-right: 20px;
+}
+
+.consultation-content h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.consultation-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.fa-solid {
+  font-size: 0.7rem;
+  margin-left: 8px;
+}
+
+.view-more-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.consultation-image {
+  flex: 1;
+}
+
+.consultation-image img {
+  width: 90%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .consultation-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-consultation {
+    padding: 60px 15px;
+  }
+  
+  .consultation-content h2 {
+    font-size: 24px;
+  }
+  
+  .consultation-content p {
+    font-size: 14px;
+  }
+  
+  .view-more-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
 }
