@@ -5,21 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <title>Habitique Home Page</title>
 </head>
 
 <body>
-  <header>
-    <p>
-      Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
-    </p>
-  </header>
 
   <!-- Main Navigation -->
   <nav class="main-nav">
@@ -276,7 +269,6 @@
   </section>
 
   <div class="browse-container">
-    <h1>BROWSE CATEGORIES</h1>
     <div class="grid">
       <div class="card office-space">
         <a href="">
@@ -307,27 +299,81 @@
   </div>
 
 
-<!-- BOOK A DESIGN CONSULTATION Section -->
-<section class="book-consultation">
-  <div class="book-container">
-    <div class="consultation-content">
-      <h2>BOOK A DESIGN CONSULTATION</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Consequat dolor odio odio malesuada at condimentum
-        adipiscing iaculis semper.
-      </p>
-      <a href="#" class="view-more-btn">
-        View more
-        <i class="fa-solid fa-chevron-right"></i>
-      </a>
+  <!-- BOOK A DESIGN CONSULTATION Section -->
+  <section class="book-consultation">
+    <div class="book-container">
+      <div class="consultation-content">
+        <h2>BOOK A DESIGN CONSULTATION</h2>
+        <p>
+          The Habitique Gallery’s mission is to help turn your dream interior
+          into a reality. Our team of talented stylists share a passion to
+          create beautiful spaces for you to call home.
+          Because life is too short not to love where you live.
+        </p>
+        <a href="#" class="view-more-btn">
+          View more
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+      <div class="consultation-image">
+        <img src="assets/images/consultation-img.jpg" alt="Design consultation meeting">
+      </div>
     </div>
-    <div class="consultation-image">
-      <img src="assets/images/consultation-img.jpg" alt="Design consultation meeting">
-    </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Service Section -->
+  <section class="services-container">
+    <!-- Left Column -->
+    <div class="service-box left">
+      <div class="service-icon"><i class="fas fa-thumbs-up"></i></div>
+      <h3>100% Satisfaction Guaranteed</h3>
+      <p>Our quality’s designed to embrace—each piece a blend of art and grace.</p>
+    </div>
+    <!-- Center Column -->
+    <div class="center-column">
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-headset"></i></div>
+        <h3>24/7 Online Service</h3>
+        <p>We’re here day or night, keeping your decor just right.</p>
+      </div>
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-truck"></i></div>
+        <h3>Fast Delivery</h3>
+        <p>Quick as a flash, we bring style to your place in a dash.</p>
+      </div>
+    </div>
+    <!-- Right Column -->
+    <div class="service-box right">
+      <div class="service-icon"><i class="fas fa-lock"></i></div>
+      <h3>Payment With Secure System</h3>
+      <p>Safe transactions set the base—trust and ease in every case.</p>
+    </div>
+  </section>
+
+<!-- Footer section -->
+  <footer>
+    <a href="" class="footerlogo">HABITIQUE</a>
+    <ul>
+      <li><a href="">Customer Service</a></li>
+      <li><a href="">Terms and Conditions</a></li>
+      <li><a href="">Vouchers and Discounts</a></li>
+    </ul>
+ <ul>
+  <li><a href="">All rights reserved</a></li>
+  <li><a href="">Copyright 2025 by Theresa</a></li>
+ </ul>
+  </footer>  
+
+ <!-- Promotional Banner (inserted via JavaScript) -->
+ <div id="promo-banner" class="promo-banner">
+  <p>
+    Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
+  </p>
+  <div>
+    <button id="shop-now-btn">Shop Now</button>
+    <button class="close-btn" id="close-banner">×</button>
+  </div>
+</div>
 
 
   <script src="assets/js/script.js"></script>

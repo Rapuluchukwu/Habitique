@@ -307,3 +307,100 @@ function showItems() {
 document.addEventListener('DOMContentLoaded', function() {
   showItems();
 });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const promo = document.getElementById('promo-notification');
+
+  // Function to show and then hide the promo
+  function showPromo() {
+    promo.classList.add('show');
+    // Hide after 10 seconds (10,000 ms)
+    setTimeout(() => {
+      promo.classList.remove('show');
+    }, 10000);
+  }
+
+  // Show the promo on page load
+  showPromo();
+
+  // Then re-show it every 60 seconds (60,000 ms)
+  setInterval(() => {
+    showPromo();
+  }, 60000);
+});
+
+
+
+ // Banner configuration
+ const config = {
+  initialDelay: 1000,         // 1 second after page load
+  displayDuration: 10000,     // Show for 10 seconds
+  repeatInterval: 60000,      // Reappear every 1 minute
+  userHasShoppedKey: 'user_has_shopped'
+};
+
+const promoBanner = document.getElementById('promo-banner');
+const closeBannerBtn = document.getElementById('close-banner');
+const shopNowBtn = document.getElementById('shop-now-btn');
+let bannerTimer;
+let repeatTimer;
+
+// Function to show the banner
+function showBanner() {
+  // Check if user has "shopped" (clicked the Shop Now button)
+  if (sessionStorage.getItem(config.userHasShoppedKey) === 'true') {
+    return; // Don't show banner if user has already shopped
+  }
+  
+  promoBanner.classList.add('visible');
+  
+  // Hide banner after displayDuration
+  bannerTimer = setTimeout(() => {
+    hideBanner();
+  }, config.displayDuration);
+}
+
+// Function to hide the banner
+function hideBanner() {
+  promoBanner.classList.remove('visible');
+  clearTimeout(bannerTimer);
+}
+
+// Event listener for close button
+closeBannerBtn.addEventListener('click', () => {
+  hideBanner();
+});
+
+// Event listener for Shop Now button
+shopNowBtn.addEventListener('click', () => {
+  // Set flag that user has "shopped"
+  sessionStorage.setItem(config.userHasShoppedKey, 'true');
+  hideBanner();
+  
+  // In a real implementation, you would redirect to shop page here
+  // window.location.href = '/shop';
+  
+  // For this example, we'll just log to console
+  console.log('User clicked Shop Now button!');
+});
+
+// Show banner initially after a short delay
+setTimeout(() => {
+  showBanner();
+  
+  // Set up repeating timer only if user hasn't shopped
+  repeatTimer = setInterval(() => {
+    // Only show if user hasn't shopped yet
+    if (sessionStorage.getItem(config.userHasShoppedKey) !== 'true') {
+      showBanner();
+    } else {
+      // Clear interval if user has shopped
+      clearInterval(repeatTimer);
+    }
+  }, config.repeatInterval);
+}, config.initialDelay);
