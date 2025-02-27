@@ -25,13 +25,13 @@ h6 {
 
 /* Main Navigation */
 .main-nav {
-  top: 7%;
+  top: 1%;
   left: 0;
   width: 100%;
   display: flex;
   z-index: 1444;
   position: fixed;
-  padding: 0 50px;
+  padding: 5px 50px;
   align-items: center;
   background-color: transparent;
   justify-content: space-evenly;
@@ -553,6 +553,68 @@ h6 {
   .download-btn {
     padding: 0.6rem 1.2rem;
   }
+}
+
+
+/* Style for when nav is in the hero/carousel section */
+.main-nav.in-hero {
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Text colors when in the hero section */
+.main-nav.in-hero .nav-links li a,
+.main-nav.in-hero .nav-left .logo,
+.main-nav.in-hero .nav-right .icon a,
+.main-nav.in-hero .nav-right .icon span {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Search bar styling in hero section */
+.main-nav.in-hero .search-input .search-input:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.main-nav.in-hero .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.main-nav.in-hero .search-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Style for when nav is scrolled past the hero section */
+.main-nav.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+/* Text colors when scrolled */
+.main-nav.scrolled .nav-links li a,
+.main-nav.scrolled .nav-left .logo,
+.main-nav.scrolled .nav-right .icon a,
+.main-nav.scrolled .nav-right .icon span {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Search bar styling when scrolled */
+.main-nav.scrolled .search-input,
+.main-nav.scrolled .search-btn {
+  background-color: rgba(139, 69, 19, 0.1);
+  border-color: #ccc;
+}
+
+.main-nav.scrolled .search-btn i {
+  color: #8B4513;
 }
 
 /* Base styling */
@@ -1096,15 +1158,14 @@ footer ul li a {
 
 
 .promo-banner {
-  background-color: #8B4513;
+  background-color: #8b45136f;
   color: white;
-  padding: 12px 20px;
+  padding: 32px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: -100px;
-  /* Start off-screen */
   left: 0;
   right: 0;
   z-index: 1000;
@@ -1113,12 +1174,12 @@ footer ul li a {
 }
 
 .promo-banner.visible {
-  top: 0;
+  top: 20%;
 }
 
 .promo-banner p {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .promo-banner span {
@@ -1138,7 +1199,7 @@ footer ul li a {
 }
 
 .promo-banner button:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0b7;
 }
 
 .promo-banner .close-btn {
@@ -1150,64 +1211,3 @@ footer ul li a {
   padding: 0 0 0 15px;
 }
 
-
-/* Style for when nav is in the hero/carousel section */
-.main-nav.in-hero {
-  background-color: transparent;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-/* Text colors when in the hero section */
-.main-nav.in-hero .nav-links li a,
-.main-nav.in-hero .nav-left .logo,
-.main-nav.in-hero .nav-right .icon a,
-.main-nav.in-hero .nav-right .icon span {
-  color: white;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* Search bar styling in hero section */
-.main-nav.in-hero .search-input .search-input:active {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: white;
-}
-
-.main-nav.in-hero .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.main-nav.in-hero .search-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Style for when nav is scrolled past the hero section */
-.main-nav.scrolled {
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #eee;
-  transition: all 0.3s ease;
-}
-
-/* Text colors when scrolled */
-.main-nav.scrolled .nav-links li a,
-.main-nav.scrolled .nav-left .logo,
-.main-nav.scrolled .nav-right .icon a,
-.main-nav.scrolled .nav-right .icon span {
-  color: #333;
-  text-shadow: none;
-}
-
-/* Search bar styling when scrolled */
-.main-nav.scrolled .search-input,
-.main-nav.scrolled .search-btn {
-  background-color: rgba(139, 69, 19, 0.1);
-  border-color: #ccc;
-}
-
-.main-nav.scrolled .search-btn i {
-  color: #8B4513;
-}
