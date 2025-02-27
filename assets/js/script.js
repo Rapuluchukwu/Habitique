@@ -404,3 +404,31 @@ setTimeout(() => {
     }
   }, config.repeatInterval);
 }, config.initialDelay);
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mainNav = document.querySelector('.main-nav');
+  const heroSection = document.querySelector('.carousel');
+  
+  function updateNavStyles() {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    
+    if (heroBottom <= 0) {
+      // Past hero section - white background with black text
+      mainNav.classList.add('scrolled');
+      mainNav.classList.remove('in-hero');
+    } else {
+      // Still in hero section - transparent background with white text
+      mainNav.classList.remove('scrolled');
+      mainNav.classList.add('in-hero');
+    }
+  }
+  
+  // Run on initial load
+  updateNavStyles();
+  
+  // Run on scroll
+  window.addEventListener('scroll', updateNavStyles);
+});

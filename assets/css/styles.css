@@ -13,7 +13,12 @@ body {
 }
 
 /* Headings: semi-bold for h1 to h6 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
 }
@@ -26,12 +31,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   z-index: 1444;
   position: fixed;
-  padding: 0 20px;
+  padding: 0 50px;
   align-items: center;
   background-color: transparent;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-bottom: 1px solid white;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0px 5px rgba(255, 255, 255, 0.4);
 }
 
 .nav-left,
@@ -81,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   max-width: 300px;
   align-items: center;
+  padding-right: 20px;
   justify-content: center;
 }
 
@@ -92,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px 0 0 5px;
   background-color: rgba(139, 69, 19, 0.2);
 }
+
 
 .search-btn {
   width: 40px;
@@ -172,21 +179,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 2px;
 }
 
-/* Carousel Styles */
-.carousel {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  min-height: 95vh;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
 
 .nav-right .icon a {
   text-decoration: none;
@@ -205,6 +197,7 @@ h1, h2, h3, h4, h5, h6 {
   .nav-search {
     max-width: 200px;
   }
+
   .search-input {
     width: 150px;
   }
@@ -214,6 +207,7 @@ h1, h2, h3, h4, h5, h6 {
   .nav-search {
     max-width: 180px;
   }
+
   .search-input {
     width: 120px;
   }
@@ -229,10 +223,12 @@ h1, h2, h3, h4, h5, h6 {
   .hamburger {
     display: none;
   }
+
   .nav-center .collapse-1,
   .nav-center .collapse-2 {
     display: inline-block;
   }
+
   .right-icons {
     display: flex;
   }
@@ -243,12 +239,15 @@ h1, h2, h3, h4, h5, h6 {
   .nav-center .collapse-2 {
     display: none;
   }
+
   .nav-center .collapse-1 {
     display: inline-block;
   }
+
   .hamburger {
     display: inline-block;
   }
+
   .right-icons {
     display: flex;
   }
@@ -259,12 +258,20 @@ h1, h2, h3, h4, h5, h6 {
   .nav-center {
     display: none;
   }
+
   .right-icons {
     display: flex;
   }
+
   .hamburger {
     display: inline-block;
   }
+
+  /* Check if these exist and are properly styled */
+.hamburger-icon, .cart-icon, .login-icon {
+  display: inline-block;
+  /* Other styles */
+}
 }
 
 /* Sidebar */
@@ -355,6 +362,7 @@ h1, h2, h3, h4, h5, h6 {
   .sidebar-tablet {
     display: none;
   }
+
   .sidebar-mobile {
     display: block;
   }
@@ -364,6 +372,7 @@ h1, h2, h3, h4, h5, h6 {
   .sidebar-mobile {
     display: none;
   }
+
   .sidebar-tablet {
     display: block;
   }
@@ -396,6 +405,27 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.slide.last-slide .slide-image {
+  transform: scale(1.1);
+  transition: transform 8s ease;
+}
+
+.slide.last-slide.active .slide-image {
+  transform: scale(2);
+}
+
+
 .slide.active {
   opacity: 1;
   z-index: 1;
@@ -417,12 +447,18 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   z-index: 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .slide-title {
   font-size: 4rem;
   margin-bottom: 2rem;
   font-weight: 700;
+  text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -493,6 +529,7 @@ h1, h2, h3, h4, h5, h6 {
   .carousel {
     height: 70vh;
   }
+
   .slide-title {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -503,13 +540,16 @@ h1, h2, h3, h4, h5, h6 {
   .carousel {
     height: 60vh;
   }
+
   .slide-content {
     padding: 0 5%;
   }
+
   .slide-title {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+
   .download-btn {
     padding: 0.6rem 1.2rem;
   }
@@ -549,9 +589,11 @@ h1, h2, h3, h4, h5, h6 {
   #gallery.section {
     padding: 3rem 1.5rem;
   }
+
   .section-title {
     font-size: 2.5rem;
   }
+
   .section-description {
     font-size: 1.125rem;
   }
@@ -561,9 +603,11 @@ h1, h2, h3, h4, h5, h6 {
   #gallery.section {
     padding: 4rem 2rem;
   }
+
   .section-title {
     font-size: 3rem;
   }
+
   .section-description {
     font-size: 1.25rem;
   }
@@ -571,8 +615,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Welcome to Gallery section styling */
 #featured-gallery {
-  padding: 60px 0;
-  background-color: #f8f8f8;
+  padding-top: 60px;
+  background-color: #fff;
 }
 
 .page-container {
@@ -608,9 +652,11 @@ h1, h2, h3, h4, h5, h6 {
   #featured-gallery {
     padding: 40px 0;
   }
+
   .gallery-heading {
     font-size: 2rem;
   }
+
   .gallery-intro {
     font-size: 1rem;
   }
@@ -620,9 +666,11 @@ h1, h2, h3, h4, h5, h6 {
   #featured-gallery {
     padding: 30px 0;
   }
+
   .gallery-heading {
     font-size: 1.75rem;
   }
+
   .page-container {
     padding: 0 15px;
   }
@@ -632,16 +680,10 @@ h1, h2, h3, h4, h5, h6 {
 .browse-container {
   width: 100%;
   padding: 50px;
+  padding-top: 0;
   background-color: white;
 }
 
-.browse-container h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #333;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
 
 .grid {
   display: grid;
@@ -651,32 +693,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
   position: relative;
-  border-radius: 3px;
+  border-radius: 36px;
   overflow: hidden;
   height: 300px;
   cursor: pointer;
-  transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.02);
+.card img:hover {
+  transform: translateX(10px);
 }
 
 .card img {
   width: 100%;
   height: 100%;
+  border-radius: 36px;
   object-fit: cover;
+  transition: transform 0.3s;
 }
 
 .card-title {
-  position: absolute;
-  bottom: 100px;
   left: 30px;
-  color: white;
+  bottom: 10%;
   z-index: 1000;
+  color: white;
   font-size: 2rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: 700;
+  position: absolute;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* Media Queries for Browse section */
@@ -685,15 +728,18 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
   }
+
   .living-room {
     height: 620px;
     grid-column: 2;
     grid-row: 1 / span 2;
   }
+
   .office-space {
     grid-row: 1;
     grid-column: 1;
   }
+
   .dining-room {
     grid-row: 2;
     grid-column: 1;
@@ -704,32 +750,28 @@ h1, h2, h3, h4, h5, h6 {
   .card {
     height: 250px;
   }
+
   .card-title {
     font-size: 1.8rem;
     left: 20px;
     bottom: 20px;
   }
-  .browse-container h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
+
 }
 
 @media screen and (max-width: 480px) {
-  .container {
+  .browse-container {
     padding: 10px;
   }
+
   .card {
     height: 200px;
   }
+
   .card-title {
     font-size: 1.5rem;
     left: 15px;
     bottom: 15px;
-  }
-  .browse-container h1 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
   }
 }
 
@@ -842,7 +884,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* BOOK A CONSULTATION styling */
 .book-consultation {
-  background-color: #8B4513; 
+  background-color: #8B4513;
   padding: 80px 20px;
   width: 100%;
 }
@@ -882,21 +924,24 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   padding: 12px 30px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: all 0.3s ease;
+  transition: left 0.8s ease-in-out;
   font-weight: 700;
+}
+
+.view-more-btn:hover {
+  color: #000000;
+  transition: all 0.8s ease-in-out;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .fa-solid {
   font-size: 0.7rem;
   margin-left: 8px;
-}
-
-.view-more-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .consultation-image {
@@ -907,6 +952,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 90%;
   height: auto;
   display: block;
+  border-radius: 36px;
 }
 
 /* Responsive styles for BOOK A CONSULTATION */
@@ -914,6 +960,7 @@ h1, h2, h3, h4, h5, h6 {
   .book-container {
     flex-direction: column;
   }
+
   .consultation-content {
     padding-right: 0;
     margin-bottom: 40px;
@@ -924,12 +971,15 @@ h1, h2, h3, h4, h5, h6 {
   .book-consultation {
     padding: 60px 15px;
   }
+
   .consultation-content h2 {
     font-size: 24px;
   }
+
   .consultation-content p {
     font-size: 14px;
   }
+
   .view-more-btn {
     padding: 10px 25px;
     font-size: 14px;
@@ -951,7 +1001,8 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   padding: 20px;
   text-align: center;
-  border: 6px solid #ccc;
+  border-radius: 25px;
+  border: 6px solid #8b451377;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -990,6 +1041,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
     padding: 20px;
   }
+
   .service-box,
   .center-column {
     margin-bottom: 20px;
@@ -1001,9 +1053,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     gap: 10px;
   }
+
   .service-box {
     padding: 15px;
   }
+
   .icon {
     width: 40px;
     height: 40px;
@@ -1027,13 +1081,13 @@ footer {
   font-weight: 700;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
-} 
+}
 
 footer ul li {
   list-style: none;
 }
 
-footer ul li a {                    
+footer ul li a {
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1049,7 +1103,8 @@ footer ul li a {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: -100px; /* Start off-screen */
+  top: -100px;
+  /* Start off-screen */
   left: 0;
   right: 0;
   z-index: 1000;
@@ -1093,4 +1148,66 @@ footer ul li a {
   font-size: 20px;
   cursor: pointer;
   padding: 0 0 0 15px;
+}
+
+
+/* Style for when nav is in the hero/carousel section */
+.main-nav.in-hero {
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Text colors when in the hero section */
+.main-nav.in-hero .nav-links li a,
+.main-nav.in-hero .nav-left .logo,
+.main-nav.in-hero .nav-right .icon a,
+.main-nav.in-hero .nav-right .icon span {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Search bar styling in hero section */
+.main-nav.in-hero .search-input .search-input:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.main-nav.in-hero .search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.main-nav.in-hero .search-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Style for when nav is scrolled past the hero section */
+.main-nav.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+/* Text colors when scrolled */
+.main-nav.scrolled .nav-links li a,
+.main-nav.scrolled .nav-left .logo,
+.main-nav.scrolled .nav-right .icon a,
+.main-nav.scrolled .nav-right .icon span {
+  color: #333;
+  text-shadow: none;
+}
+
+/* Search bar styling when scrolled */
+.main-nav.scrolled .search-input,
+.main-nav.scrolled .search-btn {
+  background-color: rgba(139, 69, 19, 0.1);
+  border-color: #ccc;
+}
+
+.main-nav.scrolled .search-btn i {
+  color: #8B4513;
 }
