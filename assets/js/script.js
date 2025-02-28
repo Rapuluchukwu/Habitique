@@ -161,20 +161,20 @@ document.addEventListener('DOMContentLoaded', function () {
           },
           {
               color: "#d63384",
-              image: "assets/images/Chair-group1-pink.jpg"
+              image: "assets/images/Chair-group1-purple.jpg"
           }
       ],
       defaultColorIndex: 0
   },
   {
-      id: 102,
+      id: 102,    
       name: "Velvet Lounge Chair",
       brand: "Chaddock",
       price: 38.00,
       colors: [
           {
               color: "#0d6efd",
-              image: "assets/images/Chair-group2-blue.jpg"
+              image: "assets/images/Chair-group2.blue.jpg"
           },
           {
               color: "#dc3545",
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
       colors: [
           {
               color: "#1a1a5e",
-              image: "assets/images/Chair-group3-navy.jpg"
+              image: "assets/images/Chair-group3-blue.jpg"
           },
           {
               color: "#6d1a1a",
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hide after 10 seconds (10,000 ms)
     setTimeout(() => {
       promo.classList.remove('show');
-    }, 10000);
+    }, 1000);
   }
 
   // Show the promo on page load
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Then re-show it every 60 seconds (60,000 ms)
   setInterval(() => {
     showPromo();
-  }, 60000);
+  }, 1000);
 });
 
 
