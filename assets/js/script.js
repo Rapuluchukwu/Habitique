@@ -309,10 +309,105 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Add this to your script.js file
+
+// Intersection Observer for slide-in animations
+document.addEventListener('DOMContentLoaded', function() {
+  const leftSlideCards = document.querySelectorAll('.slide-from-left');
+  const rightSlideCards = document.querySelectorAll('.slide-from-right');
+  
+  // Create the intersection observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // If the element is in the viewport
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        
+        // Determine which animation to apply based on the class
+        if (target.classList.contains('slide-from-left')) {
+          target.style.animation = 'slideInFromLeft 0.8s forwards';
+        } else if (target.classList.contains('slide-from-right')) {
+          target.style.animation = 'slideInFromRight 0.8s forwards';
+        }
+        
+        // Unobserve the element after it's animated
+        observer.unobserve(target);
+      }
+    });
+  }, {
+    root: null, // Use the viewport as the root
+    threshold: 0.1, // Trigger when 10% of the element is visible
+    rootMargin: '0px 0px -50px 0px' // Adjust when the animation triggers
+  });
+  
+  // Add a slight delay between each card animation
+  const allCards = [...leftSlideCards, ...rightSlideCards].sort((a, b) => {
+    // Sort by vertical position to animate cards in order of appearance
+    return a.getBoundingClientRect().top - b.getBoundingClientRect().top;
+  });
+  
+  allCards.forEach((card, index) => {
+    // Set a delay based on the card's position
+    card.style.animationDelay = `${0.15 * index}s`;
+    
+    // Observe the card
+    observer.observe(card);
+  });
+  
+  // Add the CSS animations to the stylesheet
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes slideInFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInFromRight {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const testimonialsCarousel = document.querySelector('.testimonials-carousel');
+  const testimonialsTrack = document.querySelector('.testimonials-track');
+  
+  // When the user hovers over the carousel, pause the scroll
+  testimonialsCarousel.addEventListener('mouseenter', () => {
+    testimonialsTrack.style.animationPlayState = 'paused';
+  });
+  
+  // When the user moves the mouse away, resume the scroll
+  testimonialsCarousel.addEventListener('mouseleave', () => {
+    testimonialsTrack.style.animationPlayState = 'running';
+  });
+  
+  // Additionally, pause on click (and resume on mouseout) if desired:
+  testimonialsCarousel.addEventListener('click', () => {
+    testimonialsTrack.style.animationPlayState = 'paused';
+  });
+});
 
 
 
 
+
+// Promo banner section functionality
 document.addEventListener('DOMContentLoaded', () => {
   const promo = document.getElementById('promo-notification');
 
@@ -407,7 +502,7 @@ setTimeout(() => {
 
 
 
-
+// mai.nav styling for scrolling
 document.addEventListener('DOMContentLoaded', function() {
   const mainNav = document.querySelector('.main-nav');
   const heroSection = document.querySelector('.carousel');
