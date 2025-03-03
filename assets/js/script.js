@@ -1,86 +1,91 @@
-// Toggle dropdown menus
-function toggleDropdown(element) {
-  // Get the parent list item
-  const parentLi = element.parentElement;
-
-  // Get the dropdown submenu (next element after the link)
-  const dropdown = parentLi.querySelector('.dropdown');
-
-  // Toggle dropdown-open class on the parent li
-  parentLi.classList.toggle('dropdown-open');
-
-  // Toggle show class on the dropdown
-  dropdown.classList.toggle('show');
-
-  // Close any other open dropdowns at the same level
-  const siblingItems = parentLi.parentElement.children;
-  for (let i = 0; i < siblingItems.length; i++) {
-    const sibling = siblingItems[i];
-    if (sibling !== parentLi && sibling.classList.contains('dropdown-open')) {
-      sibling.classList.remove('dropdown-open');
-      sibling.querySelector('.dropdown').classList.remove('show');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const hamburger = document.querySelector('.hamburger a');
+  const closeBtn = document.querySelector('.close-btn a');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.sidebar-overlay');
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  // Console logs for debugging
+  console.log("Hamburger element:", hamburger);
+  console.log("Sidebar element:", sidebar);
+  console.log("Overlay element:", overlay);
+  
+  // Toggle sidebar
+  function toggleSidebar() {
+    console.log("Toggle sidebar called");
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
   }
-
-  // Prevent event from bubbling up
-  event.stopPropagation();
-  return false;
-}
-
-// Show sidebar
-function showSidebar() {
-  document.querySelector('.sidebar').classList.add('active');
-  document.querySelector('.sidebar-overlay').classList.add('active');
-
-  // Determine which sidebar content to show based on screen width
-  if (window.innerWidth < 768) {
-    document.querySelector('.sidebar-mobile').style.display = 'block';
-    document.querySelector('.sidebar-tablet').style.display = 'none';
-  } else {
-    document.querySelector('.sidebar-mobile').style.display = 'none';
-    document.querySelector('.sidebar-tablet').style.display = 'block';
-  }
-}
-
-// Hide sidebar
-function hideSidebar() {
-  document.querySelector('.sidebar').classList.remove('active');
-  document.querySelector('.sidebar-overlay').classList.remove('active');
-}
-
-// Close dropdowns when clicking outside
-document.addEventListener('click', function (event) {
-  // Close all dropdowns when clicking outside
-  const dropdowns = document.querySelectorAll('.dropdown.show');
-  const dropdownParents = document.querySelectorAll('.dropdown-open');
-
-  if (!event.target.closest('.has-dropdown')) {
-    dropdowns.forEach(dropdown => {
-      dropdown.classList.remove('show');
+  
+  // Event listeners for sidebar
+  if (hamburger) {
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleSidebar();
     });
-
-    dropdownParents.forEach(parent => {
-      parent.classList.remove('dropdown-open');
+  }
+  
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleSidebar();
+    });
+  }
+  
+  if (overlay) overlay.addEventListener('click', toggleSidebar);
+  
+  // Handle dropdown toggling
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Toggle active class on the clicked toggle
+      this.classList.toggle('active');
+      
+      // Find the parent li and the dropdown within it
+      const parent = this.closest('.has-dropdown');
+      const dropdown = parent.querySelector('.dropdown');
+      
+      // In sidebar - show/hide the dropdown
+      if (parent.closest('.sidebar-menu')) {
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        } else {
+          // First, close any open dropdowns at the same level
+          const siblings = parent.parentNode.querySelectorAll('.dropdown.show');
+          siblings.forEach(sibling => {
+            if (sibling !== dropdown) {
+              sibling.classList.remove('show');
+              const siblingToggle = sibling.parentNode.querySelector('.dropdown-toggle');
+              if (siblingToggle) siblingToggle.classList.remove('active');
+            }
+          });
+          
+          dropdown.classList.add('show');
+        }
+      }
+    });
+  });
+  
+  // For desktop: Handle hover effects better
+  if (window.innerWidth >= 993) {
+    const mainNavItems = document.querySelectorAll('.nav-links .has-dropdown');
+    
+    mainNavItems.forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        const dropdown = this.querySelector('.dropdown');
+        if (dropdown) dropdown.style.display = 'block';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        const dropdown = this.querySelector('.dropdown');
+        if (dropdown) dropdown.style.display = '';
+      });
     });
   }
 });
-
-// Update sidebar display on window resize
-window.addEventListener('resize', function () {
-  if (document.querySelector('.sidebar').classList.contains('active')) {
-    if (window.innerWidth < 768) {
-      document.querySelector('.sidebar-mobile').style.display = 'block';
-      document.querySelector('.sidebar-tablet').style.display = 'none';
-    } else if (window.innerWidth < 1024) {
-      document.querySelector('.sidebar-mobile').style.display = 'none';
-      document.querySelector('.sidebar-tablet').style.display = 'block';
-    } else {
-      // On large screens, hide the sidebar completely
-      hideSidebar();
-    }
-  }
-});
-
 
 // Carousel functionality
 document.addEventListener('DOMContentLoaded', function () {

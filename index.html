@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css" />
   <title>Habitique Home Page</title>
@@ -14,215 +15,215 @@
 
 <body>
 
-  <!-- Main Navigation -->
-  <nav class="main-nav">
-    <!-- Left: Logo (always visible) -->
-    <div class="nav-left">
-      <a href="" class="logo">
-        <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
-      </a>
-    </div>
+<!-- Main Navigation -->
+<nav class="main-nav">
+  <!-- Left: Logo (always visible) -->
+  <div class="nav-left">
+    <a href="" class="logo">
+      <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
+    </a>
+  </div>
 
+  <!-- Center: Nav Links -->
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a href="">Blogs</a></li>
+      <li class="has-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle">
+          Catalog <span class="arrow-icon"></span>
+        </a>
+        <ul class="dropdown">
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle">
+              Furniture <span class="arrow-icon"></span>
+            </a>
+            <ul class="dropdown">
+              <li class="has-dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle">
+                  Home Furniture <span class="arrow-icon"></span>
+                </a>
+                <ul class="dropdown">
+                  <li><a href="">Bedroom Furniture</a></li>
+                  <li><a href="">Sitting room Furniture</a></li>
+                  <li><a href="">Kitchen Furniture</a></li>
+                  <li><a href="">Dining Furniture</a></li>
+                  <li><a href="">Bathroom Furniture</a></li>
+                  <li><a href="">Front Porch Furniture</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Office Furniture</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle">
+              Decors <span class="arrow-icon"></span>
+            </a>
+            <ul class="dropdown">
+              <li><a href="#">Home Decors</a></li>
+              <li><a href="#">Office Decors</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact us</a></li>
+    </ul>
+  </div>
 
-    <!-- Center: Nav Links -->
-    <div class="nav-center">
-      <ul class="nav-links">
-        <li class="collapse-1"><a href="">Blogs</a></li>
-        <li class="collapse-2 has-dropdown">
-          <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Catalog <span
-              class="chevron-icon">▼</span></a>
-          <ul class="dropdown">
-            <li class="has-dropdown">
-              <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Furniture <span
-                  class="chevron-icon">▼</span></a>
-              <ul class="dropdown">
-                <li class="has-dropdown">
-                  <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Home Furniture <span
-                      class="chevron-icon">▼</span></a>
-                  <ul class="dropdown">
-                    <li><a href="">Bedroom Furniture</a></li>
-                    <li><a href="">Sitting room Furniture</a></li>
-                    <li><a href="">Kitchen Furniture</a></li>
-                    <li><a href="">Dining Furniture</a></li>
-                    <li><a href="">Bathroom Furniture</a></li>
-                    <li><a href="">Front Porch Furniture</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Office Furniture</a></li>
-              </ul>
-            </li>
-            <li class="has-dropdown">
-              <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Decors <span
-                  class="chevron-icon">▼</span></a>
-              <ul class="dropdown">
-                <li><a href="#">Home Decors</a></li>
-                <li><a href="#">Office Decors</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="collapse-2"><a href="">About</a></li>
-        <li class="collapse-1"><a href="">Contact us</a></li>
-      </ul>
-    </div>
+  <!-- Search Bar -->
+  <div class="nav-search">
+    <input type="text" placeholder="I'm looking for.... " class="search-input">
+    <button class="search-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+      </svg>
+    </button>
+  </div>
 
-    <div class="nav-search">
-      <input type="text" placeholder="I'm looking for.... " class="search-input">
-      <button class="search-btn"><i class="fa fa-search"></i></button>
-    </div>
-
-
-    <!-- Right: Icons and Hamburger -->
-    <div class="nav-right">
-      <!-- Right icons (Login & Cart) -->
-      <div class="right-icons">
-        <div class="icon login-icon">
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-              <path
-                d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
-            </svg>
-            <span>Login</span>
-          </a>
-        </div>
-        <div class="icon cart-icon">
-          <a href="">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-              <path
-                d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
-            </svg>
-            <span>Shop</span>
-          </a>
-        </div>
-      </div>
-      <!-- Hamburger icon (shown on tablet and mobile only) -->
-      <div class="hamburger" onclick="showSidebar()">
-        <a href="javascript:void(0);">
-          <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000">
-            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+  <!-- Right: Icons and Hamburger -->
+  <div class="nav-right">
+    <!-- Right icons (Login, Favorites & Cart) -->
+    <div class="right-icons">
+      <div class="icon login-icon">
+        <a href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
           </svg>
+          <span>Login</span>
+        </a>
+      </div>
+      <div class="icon favorite-icon">
+        <a href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>Favorites</span>
+        </a>
+      </div>
+      <div class="icon cart-icon">
+        <a href="">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+          </svg>
+          <span>Shop</span>
         </a>
       </div>
     </div>
-  </nav>
-
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar">
-    <div class="sidebar-content">
-      <!-- Tablet Sidebar: shows only items hidden from main nav (collapse-2 items) -->
-      <div class="sidebar-tablet">
-        <ul>
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Catalog <span
-                class="chevron-icon">▼</span></a>
-            <ul class="dropdown">
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Furniture <span
-                    class="chevron-icon">▼</span></a>
-                <ul class="dropdown">
-                  <li class="has-dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Home Furniture <span
-                        class="chevron-icon">▼</span></a>
-                    <ul class="dropdown">
-                      <li><a href="">Bedroom Furniture</a></li>
-                      <li><a href="">Sitting room Furniture</a></li>
-                      <li><a href="">Kitchen Furniture</a></li>
-                      <li><a href="">Dining Furniture</a></li>
-                      <li><a href="">Bathroom Furniture</a></li>
-                      <li><a href="">Front Porch Furniture</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Office Furniture</a></li>
-                </ul>
-              </li>
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Decors <span
-                    class="chevron-icon">▼</span></a>
-                <ul class="dropdown">
-                  <li><a href="#">Home Decors</a></li>
-                  <li><a href="#">Office Decors</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="">About</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Sidebar: shows the full menu (all nav links and right icons) -->
-      <div class="sidebar-mobile">
-        <ul>
-          <li><a href="">Blog</a></li>
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Catalog <span
-                class="chevron-icon">▼</span></a>
-            <ul class="dropdown">
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Furniture <span
-                    class="chevron-icon">▼</span></a>
-                <ul class="dropdown">
-                  <li class="has-dropdown">
-                    <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Home Furniture <span
-                        class="chevron-icon">▼</span></a>
-                    <ul class="dropdown">
-                      <li><a href="">Bedroom Furniture</a></li>
-                      <li><a href="">Sitting room Furniture</a></li>
-                      <li><a href="">Kitchen Furniture</a></li>
-                      <li><a href="">Dining Furniture</a></li>
-                      <li><a href="">Bathroom Furniture</a></li>
-                      <li><a href="">Front Porch Furniture</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Office Furniture</a></li>
-                </ul>
-              </li>
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" onclick="toggleDropdown(this); return false;">Decors <span
-                    class="chevron-icon">▼</span></a>
-                <ul class="dropdown">
-                  <li><a href="#">Home Decors</a></li>
-                  <li><a href="#">Office Decors</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact us</a></li>
-          <li>
-            <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                fill="#e8eaed">
-                <path
-                  d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
-              </svg>
-              <span>Login</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                fill="#e8eaed">
-                <path
-                  d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
-              </svg>
-              <span>Shop</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- Close Button -->
-    <div class="close-btn" onclick="hideSidebar()">
+    <!-- Hamburger icon (shown on tablet and mobile only) -->
+    <div class="hamburger">
       <a href="javascript:void(0);">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 24 24" width="26" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
       </a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Add overlay div for sidebar -->
-  <div class="sidebar-overlay" onclick="hideSidebar()"></div>
+<!-- Sidebar Navigation -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <a href="" class="logo">
+      <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
+    </a>
+    <!-- Close Button -->
+    <div class="close-btn">
+      <a href="javascript:void(0);">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-search">
+      <input type="text" placeholder="I'm looking for.... " class="search-input">
+      <button class="search-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Sidebar Menu -->
+    <ul class="sidebar-menu">
+      <li><a href="">Blog</a></li>
+      <li class="has-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle">
+          Catalog <span class="arrow-icon"></span>
+        </a>
+        <ul class="dropdown">
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle">
+              Furniture <span class="arrow-icon"></span>
+            </a>
+            <ul class="dropdown">
+              <li class="has-dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle">
+                  Home Furniture <span class="arrow-icon"></span>
+                </a>
+                <ul class="dropdown">
+                  <li><a href="">Bedroom Furniture</a></li>
+                  <li><a href="">Sitting room Furniture</a></li>
+                  <li><a href="">Kitchen Furniture</a></li>
+                  <li><a href="">Dining Furniture</a></li>
+                  <li><a href="">Bathroom Furniture</a></li>
+                  <li><a href="">Front Porch Furniture</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Office Furniture</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" class="dropdown-toggle">
+              Decors <span class="arrow-icon"></span>
+            </a>
+            <ul class="dropdown">
+              <li><a href="#">Home Decors</a></li>
+              <li><a href="#">Office Decors</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-footer">
+    <div class="sidebar-icons">
+      <a href="" class="sidebar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        <span>Login</span>
+      </a>
+      <a href="" class="sidebar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span>Favorites</span>
+      </a>
+      <a href="" class="sidebar-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <span>Shop</span>
+      </a>
+    </div>
+  </div>
+</nav>
 
+<!-- Add overlay div for sidebar -->
+<div class="sidebar-overlay"></div>
   <!-- Carousel -->
   <div class="carousel">
     <!-- Slide 1 -->
@@ -351,172 +352,188 @@
   </section>
 
   <!-- Educational Blog Posts Section -->
-<section class="blog-posts-section">
-  <div class="page-container">
-    <h2 class="section-title">INTERIOR DESIGN INSIGHTS</h2>
-    <p class="section-intro">Explore our curated articles for inspiration and expert advice on creating your dream space.</p>
-    
-    <div class="blog-grid">
-      <!-- Blog Post 1 -->
-      <article class="blog-card slide-from-left">
-        <div class="blog-image">
-          <a href="blogs/minimalist-design.html">
-            <img src="assets/images/blog-minimalist.jpg" alt="Minimalist Interior Design">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">The Art of Minimalist Design</h3>
-          <p class="blog-excerpt">Discover how less becomes more with our guide to creating elegant, clutter-free spaces that promote calm and clarity.</p>
-          <a href="blogs/minimalist-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
+  <section class="blog-posts-section">
+    <div class="page-container">
+      <h2 class="section-title">INTERIOR DESIGN INSIGHTS</h2>
+      <p class="section-intro">Explore our curated articles for inspiration and expert advice on creating your dream
+        space.</p>
 
-      <!-- Blog Post 2 -->
-      <article class="blog-card slide-from-right">
-        <div class="blog-image">
-          <a href="blogs/sustainable-furniture.html">
-            <img src="assets/images/blog-sustainable.jpg" alt="Sustainable Furniture">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">Sustainable Furniture Choices</h3>
-          <p class="blog-excerpt">Learn how eco-friendly materials and ethical manufacturing are shaping the future of interior design.</p>
-          <a href="blogs/sustainable-furniture.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
+      <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <article class="blog-card slide-from-left">
+          <div class="blog-image">
+            <a href="blogs/minimalist-design.html">
+              <img src="assets/images/blog-minimalist.jpg" alt="Minimalist Interior Design">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">The Art of Minimalist Design</h3>
+            <p class="blog-excerpt">Discover how less becomes more with our guide to creating elegant, clutter-free
+              spaces that promote calm and clarity.</p>
+            <a href="blogs/minimalist-design.html" class="read-more">Read More <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
 
-      <!-- Blog Post 3 -->
-      <article class="blog-card slide-from-left">
-        <div class="blog-image">
-          <a href="blogs/color-psychology.html">
-            <img src="assets/images/blog-color.jpg" alt="Color Psychology in Interior Design">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">Color Psychology in Interior Design</h3>
-          <p class="blog-excerpt">Explore how different colors affect mood and atmosphere, and discover how to create the perfect color palette for your home.</p>
-          <a href="blogs/color-psychology.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
+        <!-- Blog Post 2 -->
+        <article class="blog-card slide-from-right">
+          <div class="blog-image">
+            <a href="blogs/sustainable-furniture.html">
+              <img src="assets/images/blog-sustainable.jpg" alt="Sustainable Furniture">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Sustainable Furniture Choices</h3>
+            <p class="blog-excerpt">Learn how eco-friendly materials and ethical manufacturing are shaping the future of
+              interior design.</p>
+            <a href="blogs/sustainable-furniture.html" class="read-more">Read More <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
 
-      <!-- Blog Post 4 -->
-      <article class="blog-card slide-from-right">
-        <div class="blog-image">
-          <a href="blogs/small-spaces.html">
-            <img src="assets/images/blog-small-spaces.jpg" alt="Maximizing Small Spaces">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">Maximizing Small Spaces</h3>
-          <p class="blog-excerpt">Smart solutions and multi-functional furniture ideas to transform compact living areas into stylish, efficient spaces.</p>
-          <a href="blogs/small-spaces.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
-      
-      <!-- Blog Post 5 -->
-      <article class="blog-card slide-from-left">
-        <div class="blog-image">
-          <a href="blogs/seasonal-decor.html">
-            <img src="assets/images/blog-seasonal.jpg" alt="Seasonal Decor Transitions">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">Seasonal Decor Transitions</h3>
-          <p class="blog-excerpt">Simple ways to update your home's look and feel with the changing seasons without a complete redesign.</p>
-          <a href="blogs/seasonal-decor.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
-      
-      <!-- Blog Post 6 -->
-      <article class="blog-card slide-from-right">
-        <div class="blog-image">
-          <a href="blogs/lighting-design.html">
-            <img src="assets/images/blog-lighting.jpg" alt="Lighting Design Fundamentals">
-          </a>
-        </div>
-        <div class="blog-content">
-          <h3 class="blog-title">Lighting Design Fundamentals</h3>
-          <p class="blog-excerpt">Master the art of layered lighting to enhance functionality, create atmosphere, and highlight your home's best features.</p>
-          <a href="blogs/lighting-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </article>
+        <!-- Blog Post 3 -->
+        <article class="blog-card slide-from-left">
+          <div class="blog-image">
+            <a href="blogs/color-psychology.html">
+              <img src="assets/images/blog-color.jpg" alt="Color Psychology in Interior Design">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Color Psychology in Interior Design</h3>
+            <p class="blog-excerpt">Explore how different colors affect mood and atmosphere, and discover how to create
+              the perfect color palette for your home.</p>
+            <a href="blogs/color-psychology.html" class="read-more">Read More <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Blog Post 4 -->
+        <article class="blog-card slide-from-right">
+          <div class="blog-image">
+            <a href="blogs/small-spaces.html">
+              <img src="assets/images/blog-small-spaces.jpg" alt="Maximizing Small Spaces">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Maximizing Small Spaces</h3>
+            <p class="blog-excerpt">Smart solutions and multi-functional furniture ideas to transform compact living
+              areas into stylish, efficient spaces.</p>
+            <a href="blogs/small-spaces.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Blog Post 5 -->
+        <article class="blog-card slide-from-left">
+          <div class="blog-image">
+            <a href="blogs/seasonal-decor.html">
+              <img src="assets/images/blog-seasonal.jpg" alt="Seasonal Decor Transitions">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Seasonal Decor Transitions</h3>
+            <p class="blog-excerpt">Simple ways to update your home's look and feel with the changing seasons without a
+              complete redesign.</p>
+            <a href="blogs/seasonal-decor.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Blog Post 6 -->
+        <article class="blog-card slide-from-right">
+          <div class="blog-image">
+            <a href="blogs/lighting-design.html">
+              <img src="assets/images/blog-lighting.jpg" alt="Lighting Design Fundamentals">
+            </a>
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">Lighting Design Fundamentals</h3>
+            <p class="blog-excerpt">Master the art of layered lighting to enhance functionality, create atmosphere, and
+              highlight your home's best features.</p>
+            <a href="blogs/lighting-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="view-all-blogs">
+        <a href="blogs/index.html" class="view-all-btn">View All Articles <i class="fa-solid fa-chevron-right"></i></a>
+      </div>
     </div>
-    
-    <div class="view-all-blogs">
-      <a href="blogs/index.html" class="view-all-btn">View All Articles <i class="fa-solid fa-chevron-right"></i></a>
-    </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Testimonials Carousel Section -->
-<section class="testimonials-carousel-section">
-  <div class="page-container">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonials-carousel">
-      <!-- The testimonials track: if you need a seamless loop you may consider duplicating these slides -->
-      <div class="testimonials-track">
-        <!-- Testimonial Slide 1 (without image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "I have never experienced such a transformation in my living space. Habitique’s design consultation was comprehensive and every detail was thoughtfully considered. My home now feels both elegant and inviting."
-          </blockquote>
-          <div class="testimonial-author">
-            <span>– Jane D.</span>
+  <!-- Testimonials Carousel Section -->
+  <section class="testimonials-carousel-section">
+    <div class="page-container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials-carousel">
+        <!-- The testimonials track: if you need a seamless loop you may consider duplicating these slides -->
+        <div class="testimonials-track">
+          <!-- Testimonial Slide 1 (without image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "I have never experienced such a transformation in my living space. Habitique’s design consultation was
+              comprehensive and every detail was thoughtfully considered. My home now feels both elegant and inviting."
+            </blockquote>
+            <div class="testimonial-author">
+              <span>– Jane D.</span>
+            </div>
           </div>
-        </div>
-        <!-- Testimonial Slide 2 (with image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "From the moment I stepped into their showroom, I was impressed by the creative approach and quality of craftsmanship. Their expert advice helped me choose pieces that perfectly complement my decor."
-          </blockquote>
-          <div class="testimonial-author">
-            <img src="assets/images/testimonial2.jpg" alt="Mark S." class="author-img">
-            <span>– Mark S.</span>
+          <!-- Testimonial Slide 2 (with image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "From the moment I stepped into their showroom, I was impressed by the creative approach and quality of
+              craftsmanship. Their expert advice helped me choose pieces that perfectly complement my decor."
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonial2.jpg" alt="Mark S." class="author-img">
+              <span>– Mark S.</span>
+            </div>
           </div>
-        </div>
-        <!-- Testimonial Slide 3 (without image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "The detailed design insights provided were incredibly helpful. I loved the in-depth explanation of color palettes and furniture arrangements which turned my vision into reality."
-          </blockquote>
-          <div class="testimonial-author">
-            <span>– Sarah W.</span>
+          <!-- Testimonial Slide 3 (without image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "The detailed design insights provided were incredibly helpful. I loved the in-depth explanation of color
+              palettes and furniture arrangements which turned my vision into reality."
+            </blockquote>
+            <div class="testimonial-author">
+              <span>– Sarah W.</span>
+            </div>
           </div>
-        </div>
-        <!-- Testimonial Slide 4 (with image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "Every piece I purchased is a statement of quality and style. The entire process—from consultation to delivery—was smooth and truly inspiring. Habitique redefines home decor."
-          </blockquote>
-          <div class="testimonial-author">
-            <img src="assets/images/testimonial4.jpg" alt="Kevin L." class="author-img">
-            <span>– Kevin L.</span>
+          <!-- Testimonial Slide 4 (with image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "Every piece I purchased is a statement of quality and style. The entire process—from consultation to
+              delivery—was smooth and truly inspiring. Habitique redefines home decor."
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonial4.jpg" alt="Kevin L." class="author-img">
+              <span>– Kevin L.</span>
+            </div>
           </div>
-        </div>
-        <!-- Testimonial Slide 5 (without image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "Their commitment to customer satisfaction is evident in every step of the process. I felt supported and inspired throughout my entire home makeover journey, and the results speak for themselves."
-          </blockquote>
-          <div class="testimonial-author">
-            <span>– Emily R.</span>
+          <!-- Testimonial Slide 5 (without image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "Their commitment to customer satisfaction is evident in every step of the process. I felt supported and
+              inspired throughout my entire home makeover journey, and the results speak for themselves."
+            </blockquote>
+            <div class="testimonial-author">
+              <span>– Emily R.</span>
+            </div>
           </div>
-        </div>
-        <!-- Testimonial Slide 6 (with image) -->
-        <div class="testimonial-slide">
-          <blockquote>
-            "Habitique not only offers top-notch furniture but also delivers an exceptional experience in interior design. The transformation of my home has been nothing short of extraordinary."
-          </blockquote>
-          <div class="testimonial-author">
-            <img src="assets/images/testimonial6.jpg" alt="Alex M." class="author-img">
-            <span>– Alex M.</span>
+          <!-- Testimonial Slide 6 (with image) -->
+          <div class="testimonial-slide">
+            <blockquote>
+              "Habitique not only offers top-notch furniture but also delivers an exceptional experience in interior
+              design. The transformation of my home has been nothing short of extraordinary."
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="assets/images/testimonial6.jpg" alt="Alex M." class="author-img">
+              <span>– Alex M.</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Modern Footer with Integrated Sections -->
@@ -546,7 +563,7 @@
               </li>
             </ul>
           </div>
-          
+
           <!-- Quick Links Column -->
           <div class="footer-column">
             <h3>Quick Links</h3>
@@ -558,7 +575,7 @@
               <li><a href="#">FAQ</a></li>
             </ul>
           </div>
-          
+
           <!-- Services Column -->
           <div class="footer-column">
             <h3>Our Services</h3>
@@ -570,12 +587,12 @@
               <li><a href="#">Custom Furniture</a></li>
             </ul>
           </div>
-          
+
           <!-- Newsletter Column -->
           <div class="footer-column">
             <h3>Stay Connected</h3>
             <p>Subscribe to get updates on our latest collections and exclusive offers.</p>
-            
+
             <div class="newsletter-wrapper">
               <form class="newsletter-form">
                 <input type="email" placeholder="Your email address" required>
@@ -583,7 +600,7 @@
               </form>
               <p class="newsletter-note">By subscribing you agree to our Privacy Policy</p>
             </div>
-            
+
             <div class="social-icons">
               <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
               <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -593,7 +610,7 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Payment Methods -->
         <div class="payment-methods">
           <span class="payment-label">Payment Methods:</span>
@@ -606,39 +623,46 @@
             <i class="fa-brands fa-google-pay"></i>
           </div>
         </div>
-        
+
         <div class="footer-divider"></div>
-        
+
         <!-- Footer Bottom -->
         <div class="footer-bottom">
           <a href="#" class="footer-logo">HABITIQUE</a>
-          
+
           <div class="footer-links">
             <a href="#">Customer Service</a>
             <a href="#">Terms and Conditions</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Vouchers and Discounts</a>
           </div>
-          
+
           <div class="footer-legal">
             <span>&copy; 2025 by Theresa. All rights reserved.</span>
           </div>
         </div>
       </div>
     </div>
-    
+
   </footer>
 
- <!-- Promotional Banner (inserted via JavaScript) -->
- <div id="promo-banner" class="promo-banner">
-  <p>
-    Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
-  </p>
-  <div>
-    <button id="shop-now-btn">Shop Now</button>
-    <button class="close-btn" id="close-banner">×</button>
+  <!-- Promotional Banner (inserted via JavaScript) -->
+  <div id="promo-banner" class="promo-banner">
+    <div class="promo-image">
+      <!-- Placeholder for the banner image -->
+      <img src="assets/images/promo-banner-imgage.webp" alt="Special offer" />
+    </div>
+    <div class="promo-content">
+      <h3>Limited Time Offer!</h3>
+      <p>
+        Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
+      </p>
+      <div class="promo-buttons">
+        <button id="shop-now-btn">Shop Now</button>
+        <button class="close-btn" id="close-banner">×</button>
+      </div>
+    </div>
   </div>
-</div>
 
 
   <script src="assets/js/script.js"></script>
