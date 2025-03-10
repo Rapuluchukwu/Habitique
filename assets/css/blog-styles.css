@@ -1,0 +1,335 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Focus styles for accessibility */
+/* :focus {
+    outline: 2px dashed var(--primary);
+    outline-offset: 4px;
+} */
+
+/*Variables & Global Styles*/
+:root {
+    --radius: 5px;
+    --black: #121212;
+    --white: #ffffff;
+    --primary: #8B4513;
+    --dark-gray: #333333;
+    --off-white: #f8f5f2;
+    --light-gray: #e9e2dd;
+    --medium-gray: #afa396;
+    --primary-dark: #6B3004;
+    --primary-light: #A05A2C;
+    --transition: all 0.3s ease;
+    --primary-transparent: rgba(139, 69, 19, 0.1);
+    --shadow: 0 0.25rem 0.75rem rgba(139, 69, 19, 0.15);
+}
+
+/* Base Styles */
+body {
+    line-height: 1.6;
+    padding-top: 50px;
+    overflow-x: hidden;
+    color: var(--dark-gray);
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--off-white);
+}
+
+img {
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* Main Container Styles */
+.custom-page-container {
+    z-index: 1000;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Section Title Styles */
+.custom-section-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    position: relative;
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    font-family: 'Raleway', sans-serif;
+}
+
+.custom-section-title::after {
+    left: 50%;
+    height: 3px;
+    width: 80px;
+    content: "";
+    bottom: -10px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: var(--radius);
+    background-color: var(--primary);
+}
+
+.custom-section-intro {
+    max-width: 800px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var( --black);
+    margin: 2rem auto 3rem;
+}
+
+/* Blog Grid Layout */
+.custom-blog-grid {
+    gap: 2.5rem;
+    display: grid;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+/* Blog Card Styles */
+.custom-blog-card {
+    overflow: hidden;
+    position: relative;
+    transform: translateY(0);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: var(--white);
+}
+
+.custom-blog-card::before {
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 4px;
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    transition: height 0.4s ease-in-out;
+}
+
+.custom-blog-card:hover::before {
+    height: 100%;
+}
+
+.custom-blog-image {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.custom-blog-image::after {
+    inset: 0;
+    opacity: 1;
+    content: "";
+    position: absolute;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.custom-blog-card img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.2);
+}
+
+.custom-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.custom-blog-card:hover .custom-blog-image img {
+    transform: scale(1.05);
+}
+
+.custom-blog-content {
+    padding: 1.5rem;
+}
+
+.custom-blog-title {
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.3;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    transition: var(--transition);
+}
+
+.custom-blog-card:hover .custom-blog-title {
+    color: var(--primary);
+}
+
+.custom-blog-excerpt {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.custom-read-more {
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+    align-items: center;
+    display: inline-flex;
+}
+
+.custom-read-more::after {
+    left: 0;
+    width: 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    transition: width 0.3s ease;
+    background-color: var(--primary);
+}
+
+.custom-read-more:hover::after {
+    width: 100%;
+}
+
+.custom-read-more i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.custom-read-more:hover i {
+    transform: translateX(4px);
+}
+
+/* Card Hover Effects */
+.custom-blog-card::after {
+    top: -5px;
+    opacity: 0;
+    right: -5px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-top: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+    transition: opacity 0.3s ease;
+}
+
+.custom-blog-card:hover::after {
+    opacity: 1;
+}
+
+/* Additional subtle label for featured posts */
+.custom-blog-card.featured::before {
+    right: 0;
+    top: 1rem;
+    z-index: 10;
+    font-size: 0.8rem;
+    position: absolute;
+    letter-spacing: 1px;
+    content: "Featured";
+    color: var(--white);
+    padding: 0.3rem 1rem;
+    transform: translateX(0);
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+    background-color: var(--primary);
+}
+
+.custom-blog-card.featured:hover::before {
+    transform: translateX(-5px);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .custom-page-container {
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .custom-blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .custom-section-title {
+        font-size: 2rem;
+    }
+
+    .custom-blog-grid {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .custom-page-container {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .custom-section-title {
+        font-size: 1.75rem;
+    }
+
+    .custom-section-intro {
+        font-size: 1rem;
+    }
+
+    .custom-page-container {
+        padding: 0 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .custom-blog-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* Override icon styling from other CSS files */
+.nav-right .icon a svg,
+.hamburger a svg {
+  fill: #000 !important;
+}
+
+/* Override link styling from other CSS files */
+.nav-center a,
+.sidebar-menu a,
+.nav-right .icon a,
+.hamburger a {
+  color: #000 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.nav-center a:hover,
+.sidebar-menu a:hover,
+.nav-right .icon a:hover,
+.hamburger a:hover {
+  color: #8B4513 !important;
+}

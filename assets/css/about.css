@@ -1,0 +1,338 @@
+/* Base Styles */
+:root {
+    --habitique-primary-font: 'Raleway', sans-serif;
+    --habitique-secondary-font: 'Raleway', sans-serif;
+    --habitique-accent-color: #8B4513;
+    --habitique-bg-light: #f9f9f9;
+    --habitique-bg-dark: #fff;
+  }
+  
+  .habitique-intro, 
+  .habitique-vision, 
+  .habitique-team, 
+  .habitique-media,
+  .habitique-care,
+  .habitique-story,
+  .habitique-craftsmanship,
+  .habitique-why-choose {
+    padding: 5rem 2rem;
+  }
+  
+  .habitique-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    gap: 4rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .habitique-container > div {
+    flex: 1 1 500px;
+  }
+  
+  /* Accent Line */
+  .habitique-accent-line {
+    width: 80px;
+    height: 3px;
+    background-color: var(--habitique-accent-color);
+    margin: 1rem 0 2rem;
+  }
+  
+  .habitique-accent-line.habitique-center {
+    margin: 1rem auto 2rem;
+  }
+  
+  /* Typography */
+  body {
+    font-family: var(--habitique-primary-font);
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--habitique-bg-dark);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--habitique-secondary-font);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #000;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  /* Buttons */
+  .habitique-btn {
+    display: inline-block;
+    background-color: var(--habitique-accent-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-family: var(--habitique-secondary-font);
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .habitique-btn:hover {
+    background-color: #6b340e;
+    transform: translateY(-2px);
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  /* Section Backgrounds */
+  .habitique-intro,
+  .habitique-vision,
+  .habitique-team,
+  .habitique-media,
+  .habitique-why-choose {
+    background-color: var(--habitique-bg-light);
+  }
+  
+  .habitique-story,
+  .habitique-craftsmanship,
+  .habitique-care {
+    background-color: var(--habitique-bg-dark);
+  }
+  
+  /* Reverse Layout */
+  .habitique-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Team Section */
+  .habitique-team {
+    text-align: center;
+  }
+  
+  .habitique-team-header {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+  
+  .habitique-team-intro {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+  
+  .habitique-team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .habitique-team-member {
+    flex: 1 1 220px;
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .habitique-team-member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .habitique-member-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .habitique-member-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Media Section */
+  .habitique-media-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+  
+  .habitique-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .habitique-media-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .habitique-media-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .habitique-media-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    color: white;
+    padding: 2rem 1.5rem;
+    transform: translateY(70%);
+    transition: transform 0.3s ease;
+  }
+  
+  .habitique-media-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  .habitique-media-item:hover .habitique-media-overlay {
+    transform: translateY(0);
+  }
+  
+  .habitique-media-overlay h3 {
+    margin: 0 0 0.5rem;
+  }
+  
+  .habitique-media-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .habitique-video-overlay .habitique-play-icon {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: white;
+    background: rgba(139, 69, 19, 0.8);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Features Section */
+  .habitique-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .habitique-feature {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .habitique-feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .habitique-feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(139, 69, 19, 0.1);
+    border-radius: 50%;
+  }
+  
+  .habitique-feature h3 {
+    color: var(--habitique-accent-color);
+    margin-bottom: 1rem;
+  }
+  
+
+  /* Ensure alternating sections use flex layout */
+.habitique-alternate .habitique-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Automatic alternation: reverse flex order on even sections */
+  .habitique-alternate:nth-of-type(even) .habitique-container {
+    flex-direction: row-reverse;
+  }
+  
+  /* Basic styling for text and image blocks */
+  .habitique-text,
+  .habitique-image {
+    flex: 1 1 500px;
+  }
+  
+
+/* Override icon styling from other CSS files */
+.nav-right .icon a svg,
+.hamburger a svg {
+  fill: #000 !important;
+}
+
+/* Override link styling from other CSS files */
+.nav-center a,
+.sidebar-menu a,
+.nav-right .icon a,
+.hamburger a {
+  color: #000 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+.nav-center a:hover,
+.sidebar-menu a:hover,
+.nav-right .icon a:hover,
+.hamburger a:hover {
+  color: #8B4513 !important;
+}
+

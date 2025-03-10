@@ -14,216 +14,9 @@
 </head>
 
 <body>
+ <!-- Header -->
+<script src="assets/js/header.js"></script>
 
-<!-- Main Navigation -->
-<nav class="main-nav">
-  <!-- Left: Logo (always visible) -->
-  <div class="nav-left">
-    <a href="" class="logo">
-      <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
-    </a>
-  </div>
-
-  <!-- Center: Nav Links -->
-  <div class="nav-center">
-    <ul class="nav-links">
-      <li><a href="">Blogs</a></li>
-      <li class="has-dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle">
-          Catalog <span class="arrow-icon"></span>
-        </a>
-        <ul class="dropdown">
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle">
-              Furniture <span class="arrow-icon"></span>
-            </a>
-            <ul class="dropdown">
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle">
-                  Home Furniture <span class="arrow-icon"></span>
-                </a>
-                <ul class="dropdown">
-                  <li><a href="">Bedroom Furniture</a></li>
-                  <li><a href="">Sitting room Furniture</a></li>
-                  <li><a href="">Kitchen Furniture</a></li>
-                  <li><a href="">Dining Furniture</a></li>
-                  <li><a href="">Bathroom Furniture</a></li>
-                  <li><a href="">Front Porch Furniture</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Office Furniture</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle">
-              Decors <span class="arrow-icon"></span>
-            </a>
-            <ul class="dropdown">
-              <li><a href="#">Home Decors</a></li>
-              <li><a href="#">Office Decors</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact us</a></li>
-    </ul>
-  </div>
-
-  <!-- Search Bar -->
-  <div class="nav-search">
-    <input type="text" placeholder="I'm looking for.... " class="search-input">
-    <button class="search-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
-        <path d="M0 0h24v24H0z" fill="none"/>
-        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Right: Icons and Hamburger -->
-  <div class="nav-right">
-    <!-- Right icons (Login, Favorites & Cart) -->
-    <div class="right-icons">
-      <div class="icon login-icon">
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-          <span>Login</span>
-        </a>
-      </div>
-      <div class="icon favorite-icon">
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-          </svg>
-          <span>Favorites</span>
-        </a>
-      </div>
-      <div class="icon cart-icon">
-        <a href="">
-          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-          </svg>
-          <span>Shop</span>
-        </a>
-      </div>
-    </div>
-    <!-- Hamburger icon (shown on tablet and mobile only) -->
-    <div class="hamburger">
-      <a href="javascript:void(0);">
-        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 24 24" width="26" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</nav>
-
-<!-- Sidebar Navigation -->
-<nav class="sidebar">
-  <div class="sidebar-header">
-    <a href="" class="logo">
-      <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
-    </a>
-    <!-- Close Button -->
-    <div class="close-btn">
-      <a href="javascript:void(0);">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-  <div class="sidebar-content">
-    <div class="sidebar-search">
-      <input type="text" placeholder="I'm looking for.... " class="search-input">
-      <button class="search-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-        </svg>
-      </button>
-    </div>
-    <!-- Sidebar Menu -->
-    <ul class="sidebar-menu">
-      <li><a href="">Blog</a></li>
-      <li class="has-dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle">
-          Catalog <span class="arrow-icon"></span>
-        </a>
-        <ul class="dropdown">
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle">
-              Furniture <span class="arrow-icon"></span>
-            </a>
-            <ul class="dropdown">
-              <li class="has-dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle">
-                  Home Furniture <span class="arrow-icon"></span>
-                </a>
-                <ul class="dropdown">
-                  <li><a href="">Bedroom Furniture</a></li>
-                  <li><a href="">Sitting room Furniture</a></li>
-                  <li><a href="">Kitchen Furniture</a></li>
-                  <li><a href="">Dining Furniture</a></li>
-                  <li><a href="">Bathroom Furniture</a></li>
-                  <li><a href="">Front Porch Furniture</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Office Furniture</a></li>
-            </ul>
-          </li>
-          <li class="has-dropdown">
-            <a href="javascript:void(0);" class="dropdown-toggle">
-              Decors <span class="arrow-icon"></span>
-            </a>
-            <ul class="dropdown">
-              <li><a href="#">Home Decors</a></li>
-              <li><a href="#">Office Decors</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="">About</a></li>
-      <li><a href="">Contact us</a></li>
-    </ul>
-  </div>
-  <div class="sidebar-footer">
-    <div class="sidebar-icons">
-      <a href="" class="sidebar-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-        </svg>
-        <span>Login</span>
-      </a>
-      <a href="" class="sidebar-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-        <span>Favorites</span>
-      </a>
-      <a href="" class="sidebar-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="currentColor">
-          <path d="M0 0h24v24H0z" fill="none"/>
-          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-        </svg>
-        <span>Shop</span>
-      </a>
-    </div>
-  </div>
-</nav>
-
-<!-- Add overlay div for sidebar -->
-<div class="sidebar-overlay"></div>
   <!-- Carousel -->
   <div class="carousel">
     <!-- Slide 1 -->
@@ -323,16 +116,16 @@
   </section>
 
   <!-- Service Section -->
-  <section class="services-container">
+  <!-- <section class="services-container"> -->
     <!-- Left Column -->
-    <div class="service-box left">
+    <!-- <div class="service-box left">
       <div class="service-icon"><i class="fas fa-thumbs-up"></i></div>
       <h3>100% Satisfaction Guaranteed</h3>
       <p>Our quality's designed to embrace—each piece a blend of art and grace.</p>
-    </div>
+    </div> -->
     <!-- Center Column -->
-    <div class="center-column">
-      <div class="service-box">
+    <!-- <div class="center-column"> -->
+      <!-- <div class="service-box">
         <div class="service-icon"><i class="fas fa-headset"></i></div>
         <h3>24/7 Online Service</h3>
         <p>We're here day or night, keeping your decor just right.</p>
@@ -342,14 +135,14 @@
         <h3>Fast Delivery</h3>
         <p>Quick as a flash, we bring style to your place in a dash.</p>
       </div>
-    </div>
+    </div> -->
     <!-- Right Column -->
-    <div class="service-box right">
-      <div class="service-icon"><i class="fas fa-lock"></i></div>
+    <!-- <div class="service-box right"> -->
+      <!-- <div class="service-icon"><i class="fas fa-lock"></i></div>
       <h3>Payment With Secure System</h3>
       <p>Safe transactions set the base—trust and ease in every case.</p>
     </div>
-  </section>
+  </section> -->
 
   <!-- Educational Blog Posts Section -->
   <section class="blog-posts-section">
@@ -362,15 +155,15 @@
         <!-- Blog Post 1 -->
         <article class="blog-card slide-from-left">
           <div class="blog-image">
-            <a href="blogs/minimalist-design.html">
-              <img src="assets/images/blog-minimalist.jpg" alt="Minimalist Interior Design">
+            <a href="minimalist-design.html">
+              <img src="assets/images/blog images/minimalist-design.webp" alt="Minimalist Interior Design">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">The Art of Minimalist Design</h3>
             <p class="blog-excerpt">Discover how less becomes more with our guide to creating elegant, clutter-free
               spaces that promote calm and clarity.</p>
-            <a href="blogs/minimalist-design.html" class="read-more">Read More <i
+            <a href="minimalist-design.html" class="read-more">Read More <i
                 class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
@@ -378,15 +171,15 @@
         <!-- Blog Post 2 -->
         <article class="blog-card slide-from-right">
           <div class="blog-image">
-            <a href="blogs/sustainable-furniture.html">
-              <img src="assets/images/blog-sustainable.jpg" alt="Sustainable Furniture">
+            <a href="sustainable-furniture.html">
+              <img src="assets/images/blog images/sustainable-furniture.webp" alt="Sustainable Furniture">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">Sustainable Furniture Choices</h3>
             <p class="blog-excerpt">Learn how eco-friendly materials and ethical manufacturing are shaping the future of
               interior design.</p>
-            <a href="blogs/sustainable-furniture.html" class="read-more">Read More <i
+            <a href="sustainable-furniture.html" class="read-more">Read More <i
                 class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
@@ -394,67 +187,67 @@
         <!-- Blog Post 3 -->
         <article class="blog-card slide-from-left">
           <div class="blog-image">
-            <a href="blogs/color-psychology.html">
-              <img src="assets/images/blog-color.jpg" alt="Color Psychology in Interior Design">
+            <a href="color-psychology.html">
+              <img src="assets/images/blog images/color-psychology.webp" alt="Color Psychology in Interior Design">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">Color Psychology in Interior Design</h3>
             <p class="blog-excerpt">Explore how different colors affect mood and atmosphere, and discover how to create
               the perfect color palette for your home.</p>
-            <a href="blogs/color-psychology.html" class="read-more">Read More <i
+            <a href="color-psychology.html" class="read-more">Read More <i
                 class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
         <!-- Blog Post 4 -->
-        <article class="blog-card slide-from-right">
+        <!-- <article class="blog-card slide-from-right">
           <div class="blog-image">
-            <a href="blogs/small-spaces.html">
-              <img src="assets/images/blog-small-spaces.jpg" alt="Maximizing Small Spaces">
+            <a href="small-spaces.html">
+              <img src="assets/images/blog images/small-spaces.webp" alt="Maximizing Small Spaces">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">Maximizing Small Spaces</h3>
             <p class="blog-excerpt">Smart solutions and multi-functional furniture ideas to transform compact living
               areas into stylish, efficient spaces.</p>
-            <a href="blogs/small-spaces.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="small-spaces.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-        </article>
+        </article> -->
 
         <!-- Blog Post 5 -->
-        <article class="blog-card slide-from-left">
+        <!-- <article class="blog-card slide-from-left">
           <div class="blog-image">
             <a href="blogs/seasonal-decor.html">
-              <img src="assets/images/blog-seasonal.jpg" alt="Seasonal Decor Transitions">
+              <img src="assets/images/blog images/seasonal-decor.webp" alt="Seasonal Decor Transitions">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">Seasonal Decor Transitions</h3>
             <p class="blog-excerpt">Simple ways to update your home's look and feel with the changing seasons without a
               complete redesign.</p>
-            <a href="blogs/seasonal-decor.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="seasonal-decor.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-        </article>
+        </article> -->
 
         <!-- Blog Post 6 -->
-        <article class="blog-card slide-from-right">
+        <!-- <article class="blog-card slide-from-right">
           <div class="blog-image">
-            <a href="blogs/lighting-design.html">
-              <img src="assets/images/blog-lighting.jpg" alt="Lighting Design Fundamentals">
+            <a href="lighting-design.html">
+              <img src="assets/images/blog images/lighting-design.webp" alt="Lighting Design Fundamentals">
             </a>
           </div>
           <div class="blog-content">
             <h3 class="blog-title">Lighting Design Fundamentals</h3>
             <p class="blog-excerpt">Master the art of layered lighting to enhance functionality, create atmosphere, and
               highlight your home's best features.</p>
-            <a href="blogs/lighting-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="lighting-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-        </article>
+        </article> -->
       </div>
 
       <div class="view-all-blogs">
-        <a href="blogs/index.html" class="view-all-btn">View All Articles <i class="fa-solid fa-chevron-right"></i></a>
+        <a href="blog-index.html" class="view-all-btn">View All Articles <i class="fa-solid fa-chevron-right"></i></a>
       </div>
     </div>
   </section>
@@ -465,16 +258,15 @@
     <div class="page-container">
       <h2 class="section-title">What Our Customers Say</h2>
       <div class="testimonials-carousel">
-        <!-- The testimonials track: if you need a seamless loop you may consider duplicating these slides -->
         <div class="testimonials-track">
-          <!-- Testimonial Slide 1 (without image) -->
           <div class="testimonial-slide">
             <blockquote>
               "I have never experienced such a transformation in my living space. Habitique’s design consultation was
               comprehensive and every detail was thoughtfully considered. My home now feels both elegant and inviting."
             </blockquote>
             <div class="testimonial-author">
-              <span>– Jane D.</span>
+              <img src="assets/images/testimonial2.webp" alt="Mark S." class="author-img">
+              <span>– Jane Doe</span>
             </div>
           </div>
           <!-- Testimonial Slide 2 (with image) -->
@@ -484,39 +276,41 @@
               craftsmanship. Their expert advice helped me choose pieces that perfectly complement my decor."
             </blockquote>
             <div class="testimonial-author">
-              <img src="assets/images/testimonial2.jpg" alt="Mark S." class="author-img">
-              <span>– Mark S.</span>
+              <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
+              <span>– Mark Steven</span>
             </div>
           </div>
-          <!-- Testimonial Slide 3 (without image) -->
+          
           <div class="testimonial-slide">
             <blockquote>
               "The detailed design insights provided were incredibly helpful. I loved the in-depth explanation of color
               palettes and furniture arrangements which turned my vision into reality."
             </blockquote>
             <div class="testimonial-author">
-              <span>– Sarah W.</span>
+              <img src="assets/images/testimonial4.webp" alt="Kevin L." class="author-img">
+              <span>– Sarah Wills</span>
             </div>
           </div>
-          <!-- Testimonial Slide 4 (with image) -->
+          
           <div class="testimonial-slide">
             <blockquote>
               "Every piece I purchased is a statement of quality and style. The entire process—from consultation to
               delivery—was smooth and truly inspiring. Habitique redefines home decor."
             </blockquote>
             <div class="testimonial-author">
-              <img src="assets/images/testimonial4.jpg" alt="Kevin L." class="author-img">
-              <span>– Kevin L.</span>
+              <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
+              <span>– Kevin Livingstone</span>
             </div>
           </div>
-          <!-- Testimonial Slide 5 (without image) -->
+          
           <div class="testimonial-slide">
             <blockquote>
               "Their commitment to customer satisfaction is evident in every step of the process. I felt supported and
               inspired throughout my entire home makeover journey, and the results speak for themselves."
             </blockquote>
             <div class="testimonial-author">
-              <span>– Emily R.</span>
+              <img src="assets/images/testimonial6.webp" alt="Alex M." class="author-img">
+              <span>– Innocent Akamdiocha</span>
             </div>
           </div>
           <!-- Testimonial Slide 6 (with image) -->
@@ -526,8 +320,7 @@
               design. The transformation of my home has been nothing short of extraordinary."
             </blockquote>
             <div class="testimonial-author">
-              <img src="assets/images/testimonial6.jpg" alt="Alex M." class="author-img">
-              <span>– Alex M.</span>
+              <span>– Emily Raymond</span>
             </div>
           </div>
         </div>
@@ -536,135 +329,72 @@
   </section>
 
 
-  <!-- Modern Footer with Integrated Sections -->
-  <footer class="modern-footer">
-    <div class="page-container">
-      <div class="footer-content">
-        <div class="footer-top">
-          <!-- Contact Column -->
-          <div class="footer-column">
-            <h3>Contact Us</h3>
-            <ul class="footer-contact-list">
-              <li>
-                <i class="fa-solid fa-location-dot"></i>
-                <span>1234 Street, City, Country</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone"></i>
-                <span>+123 456 7890</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-envelope"></i>
-                <span>info@habitique.com</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-clock"></i>
-                <span>Mon-Fri: 9am - 5pm<br>Sat: 10am - 4pm</span>
-              </li>
-            </ul>
-          </div>
+  <!-- Footer  -->
+ <script src="assets/js/footer.js"></script>
 
-          <!-- Quick Links Column -->
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul class="footer-links-list">
-              <li><a href="#">Shop Now</a></li>
-              <li><a href="#">Book a Consultation</a></li>
-              <li><a href="#">Interior Design Services</a></li>
-              <li><a href="#">Blog & Inspiration</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
+<!-- Overlay Background -->
+<div id="promo-overlay" class="promo-overlay"></div>
 
-          <!-- Services Column -->
-          <div class="footer-column">
-            <h3>Our Services</h3>
-            <ul class="footer-links-list">
-              <li><a href="#">Interior Design</a></li>
-              <li><a href="#">Furniture Selection</a></li>
-              <li><a href="#">Space Planning</a></li>
-              <li><a href="#">Color Consultation</a></li>
-              <li><a href="#">Custom Furniture</a></li>
-            </ul>
-          </div>
+<!-- Promotional Banner (inserted via JavaScript) -->
+<div id="promo-banner" class="promo-banner">
+  <div class="promo-image">
+    <!-- Placeholder for the banner image -->
+    <img src="assets/images/promo-banner-imgage.webp" alt="Special offer" />
+  </div>
+  <div class="promo-content">
+    <h3>Limited Time Offer!</h3>
+    <p>
+      Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
+    </p>
+    <div class="promo-buttons">
+      <button id="shop-now-btn">Shop Now</button>
+      <button class="close-btn" id="close-banner">×</button>
+    </div>
+  </div>
+</div>
 
-          <!-- Newsletter Column -->
-          <div class="footer-column">
-            <h3>Stay Connected</h3>
-            <p>Subscribe to get updates on our latest collections and exclusive offers.</p>
 
-            <div class="newsletter-wrapper">
-              <form class="newsletter-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-              </form>
-              <p class="newsletter-note">By subscribing you agree to our Privacy Policy</p>
-            </div>
-
-            <div class="social-icons">
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-              <a href="#"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Payment Methods -->
-        <div class="payment-methods">
-          <span class="payment-label">Payment Methods:</span>
-          <div class="payment-icons">
-            <i class="fa-brands fa-cc-mastercard"></i>
-            <i class="fa-brands fa-cc-visa"></i>
-            <i class="fa-brands fa-cc-paypal"></i>
-            <i class="fa-brands fa-cc-amex"></i>
-            <i class="fa-brands fa-apple-pay"></i>
-            <i class="fa-brands fa-google-pay"></i>
-          </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <a href="#" class="footer-logo">HABITIQUE</a>
-
-          <div class="footer-links">
-            <a href="#">Customer Service</a>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Vouchers and Discounts</a>
-          </div>
-
-          <div class="footer-legal">
-            <span>&copy; 2025 by Theresa. All rights reserved.</span>
-          </div>
-        </div>
+  
+  <!-- --------------------------------------------------------------- -->
+     <!-- Sign In Modal (hidden by default) -->
+  <div id="signin-modal" class="modal hidden">
+    <button class="close-modal" id="closeModal">&times;</button>
+    <div class="modal-content">
+      <!-- Left Section: Image -->
+      <div class="image-section">
+        <div class="logo"><span>HABITI</span>QUE</div>
+        <img src="assets/images/Sign-in-Image.jpg" alt="Interior design with comfortable chairs">
       </div>
-    </div>
-
-  </footer>
-
-  <!-- Promotional Banner (inserted via JavaScript) -->
-  <div id="promo-banner" class="promo-banner">
-    <div class="promo-image">
-      <!-- Placeholder for the banner image -->
-      <img src="assets/images/promo-banner-imgage.webp" alt="Special offer" />
-    </div>
-    <div class="promo-content">
-      <h3>Limited Time Offer!</h3>
-      <p>
-        Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
-      </p>
-      <div class="promo-buttons">
-        <button id="shop-now-btn">Shop Now</button>
-        <button class="close-btn" id="close-banner">×</button>
+      <!-- Right Section: Sign In Form -->
+      <div class="form-section">
+        <h1>SIGN IN</h1>
+        <form id="signin-form">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" placeholder="example@mail.com" required>
+          <div id="email-error" class="error-message">Please enter a valid email address</div>
+  
+          <label for="password">PASSWORD</label>
+          <div class="password-container">
+            <input type="password" id="password" placeholder="********" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+              <i class="fa-solid fa-eye"></i>
+            </span>
+          </div>
+          <div id="password-error" class="error-message">Please enter your password</div>
+  
+          <button type="submit" id="submit-btn">
+            SIGN IN <span class="right-arrow">→</span>
+          </button>
+        </form>
+        <div class="register-link">
+          Don't have an account? <a href="#"  >Register here</a>
+        </div>
       </div>
     </div>
   </div>
 
 
+<!-- -------------------------------------------------------------------------- -->
   <script src="assets/js/script.js"></script>
 </body>
 
