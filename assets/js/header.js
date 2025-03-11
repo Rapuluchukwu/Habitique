@@ -185,7 +185,7 @@ document.write(`
             </ul>
           </li>
           <li><a href="about.html">About</a></li>
-          <li><a href="">Contact us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
     </nav>

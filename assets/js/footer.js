@@ -11,7 +11,7 @@ document.write(`
             <ul class="footer-contact-list">
               <li>
                 <i class="fa-solid fa-location-dot"></i>
-                <span>1st Gaiety, Port Harcourt, Rivers, Nigeria</span>
+                <span>Port Harcourt, Rivers, Nigeria</span>
               </li>
               <li>
                 <i class="fa-solid fa-phone"></i>

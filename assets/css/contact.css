@@ -23,10 +23,10 @@
     --pinterest: #E60023;
   }
   
-  
   body {
     font-family: 'Raleway', sans-serif;
     background-color: var(--off-white);
+    /* background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9c9c9' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E"); */
     color: var(--text-dark);
     padding-top: 60px;
     line-height: 1.6;
@@ -53,7 +53,7 @@
     position: relative;
     height: 60vh;
     min-height: 300px;
-    background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1556912173-46c336c7fd55') no-repeat center center;
+    background: linear-gradient(rgba(139, 69, 19, 0.5), rgba(0, 0, 0, 0.4)), url('/assets/images/contact-hero-img.webp') no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -80,8 +80,8 @@
     letter-spacing: 1px;
   }
   
- /* Contact Cards */
-.contact-cards {
+  /* Contact Cards */
+  .contact-cards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -93,8 +93,8 @@
   }
   
   .card {
-    background-color: var(--white);
-    border-radius: 8px;
+    background: linear-gradient(135deg, var(--white) 0%, #f7f7f7 100%);
+    border-radius: 12px;
     box-shadow: var(--shadow);
     padding: 2rem;
     width: 250px;
@@ -102,58 +102,92 @@
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
   }
   
   .card::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 3px;
-    background-color: var(--primary);
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
     top: 0;
     left: 0;
   }
   
+  /* Add an overlay that appears by default */
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05); /* Light overlay */
+    transition: var(--transition);
+    z-index: 1;
+  }
+  
+  /* Make all card content appear above the overlay */
+  .card > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Remove the overlay on hover */
+  .card:hover::after {
+    opacity: 0;
+  }
+  
   .social-card.instagram::before {
-    background-color: var(--instagram);
+    background: linear-gradient(90deg, var(--instagram) 0%, #E1306C 100%);
   }
   
   .social-card.whatsapp::before {
-    background-color: var(--whatsapp);
+    background: linear-gradient(90deg, var(--whatsapp) 0%, #128C7E 100%);
   }
   
   .social-card.pinterest::before {
-    background-color: var(--pinterest);
+    background: linear-gradient(90deg, var(--pinterest) 0%, #B7081B 100%);
   }
   
   .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-dark);
+    background: linear-gradient(135deg, var(--white) 0%, #f0f0f0 100%);
   }
   
   .card-icon {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: var(--white);
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
     transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.2);
+  }
+  
+  .card:hover .card-icon {
+    transform: scale(1.05);
   }
   
   .social-card.instagram .card-icon {
-    background-color: var(--instagram);
+    background: linear-gradient(135deg, var(--instagram) 0%, #E1306C 100%);
+    box-shadow: 0 4px 10px rgba(193, 53, 132, 0.2);
   }
   
   .social-card.whatsapp .card-icon {
-    background-color: var(--whatsapp);
+    background: linear-gradient(135deg, var(--whatsapp) 0%, #128C7E 100%);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
   }
   
   .social-card.pinterest .card-icon {
-    background-color: var(--pinterest);
+    background: linear-gradient(135deg, var(--pinterest) 0%, #B7081B 100%);
+    box-shadow: 0 4px 10px rgba(230, 0, 35, 0.2);
   }
   
   .card-icon i {
@@ -248,6 +282,24 @@
   
   .contact-form-container {
     padding: 3rem;
+    position: relative;
+    background: linear-gradient(135deg, var(--white) 0%, #f7f7f7 100%);
+  }
+  
+  .contact-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('');
+    z-index: 0;
+  }
+  
+  .form-header, .contact-form {
+    position: relative;
+    z-index: 1;
   }
   
   .form-header {
@@ -286,9 +338,10 @@
     width: 100%;
     padding: 0.8rem 1rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: var(--transition);
     font-family: 'Poppins', sans-serif;
+    background-color: #fcfcfc;
   }
   
   .form-group input:focus,
@@ -296,6 +349,7 @@
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    background-color: white;
   }
   
   .btn-submit {
@@ -303,7 +357,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: var(--white);
     border: none;
     padding: 1rem 2rem;
@@ -316,6 +370,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(139, 69, 19, 0.2);
   }
   
   .btn-submit::before {
@@ -335,16 +390,17 @@
   
   .btn-submit:hover {
     background-color: var(--primary);
-    translate : Y(-2px);
+    translate: 0 -2px;
+    box-shadow: 0 6px 15px rgba(139, 69, 19, 0.3);
   }
   
   .btn-submit i {
-    translate: X(0);
+    translate: 0 0;
     transition: transform 0.3s ease;
   }
   
   .btn-submit:hover i {
-    translate: X(5px);
+    translate: 5px 0;
   }
   
   .contact-image {
@@ -365,42 +421,38 @@
   }
   
   .contact-box {
-    background-color: var(--white);
+    background: linear-gradient(135deg, var(--white) 0%, #f7f7f7 100%);
     padding: 2.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.03);
   }
   
   .contact-box::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 4px;
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, rgba(139, 69, 19, 0.05), transparent);
-    transform: translateY(100%);
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
     transition: transform 0.5s ease;
   }
   
-  .contact-box:hover::before {
-    transform: translateY(0);
+  .press::before {
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+  }
+  
+  .careers::before {
+    background: linear-gradient(to bottom, var(--text-dark), #555555);
   }
   
   .contact-box:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-dark);
-  }
-  
-  .press {
-    border-left: 4px solid var(--primary);
-  }
-  
-  .careers {
-    border-left: 4px solid var(--text-dark);
   }
   
   .contact-box h3 {
@@ -476,10 +528,6 @@
   }
   
   @media (max-width: 768px) {
-    .contact-hero {
-      height: 35vh;
-      min-height: 250px;
-    }
     
     .contact-hero h1 {
       font-size: 2.5rem;
@@ -539,27 +587,27 @@
   
   form, textarea {
     resize: none !important;
-}
-
+  }
+  
   /* Override icon styling from other CSS files */
-.nav-right .icon a svg,
-.hamburger a svg {
-  fill: #000 !important;
-}
-
-/* Override link styling from other CSS files */
-.nav-center a,
-.sidebar-menu a,
-.nav-right .icon a,
-.hamburger a {
-  color: #000 !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease !important;
-}
-
-.nav-center a:hover,
-.sidebar-menu a:hover,
-.nav-right .icon a:hover,
-.hamburger a:hover {
-  color: #8B4513 !important;
-}
+  .nav-right .icon a svg,
+  .hamburger a svg {
+    fill: #000 !important;
+  }
+  
+  /* Override link styling from other CSS files */
+  .nav-center a,
+  .sidebar-menu a,
+  .nav-right .icon a,
+  .hamburger a {
+    color: #000 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+  }
+  
+  .nav-center a:hover,
+  .sidebar-menu a:hover,
+  .nav-right .icon a:hover,
+  .hamburger a:hover {
+    color: #8B4513 !important;
+  }
