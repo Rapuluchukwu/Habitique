@@ -390,6 +390,10 @@ p {
     color: var(--black);
 }
 
+form, textarea {
+    resize: none !important;
+}
+
 /* Override icon styling from other CSS files */
 .nav-right .icon a svg,
 .hamburger a svg {

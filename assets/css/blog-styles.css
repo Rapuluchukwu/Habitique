@@ -6,12 +6,6 @@
     box-sizing: border-box;
 }
 
-/* Focus styles for accessibility */
-/* :focus {
-    outline: 2px dashed var(--primary);
-    outline-offset: 4px;
-} */
-
 /*Variables & Global Styles*/
 :root {
     --radius: 5px;
@@ -23,7 +17,7 @@
     --light-gray: #e9e2dd;
     --medium-gray: #afa396;
     --primary-dark: #6B3004;
-    --primary-light: #A05A2C;
+    --primary-light: #8B4513;
     --transition: all 0.3s ease;
     --primary-transparent: rgba(139, 69, 19, 0.1);
     --shadow: 0 0.25rem 0.75rem rgba(139, 69, 19, 0.15);
@@ -93,7 +87,7 @@ a:hover {
     line-height: 1.8;
     font-size: 1.1rem;
     text-align: center;
-    color: var( --black);
+    color: var(--black);
     margin: 2rem auto 3rem;
 }
 
@@ -300,7 +294,7 @@ a:hover {
     .custom-section-intro {
         font-size: 1rem;
     }
-
+    
     .custom-page-container {
         padding: 0 1.5rem;
         margin: 2rem auto;
@@ -314,7 +308,12 @@ a:hover {
 /* Override icon styling from other CSS files */
 .nav-right .icon a svg,
 .hamburger a svg {
-  fill: #000 !important;
+    fill: #000 !important;
+}
+
+.nav-right .icon a svg:hover,
+.hamburger a svg:hover {
+    background-color: none !important;
 }
 
 /* Override link styling from other CSS files */
@@ -322,14 +321,14 @@ a:hover {
 .sidebar-menu a,
 .nav-right .icon a,
 .hamburger a {
-  color: #000 !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease !important;
+    color: #000 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
 }
 
 .nav-center a:hover,
 .sidebar-menu a:hover,
 .nav-right .icon a:hover,
 .hamburger a:hover {
-  color: #8B4513 !important;
+    color: #8b4513 !important;
 }

@@ -261,7 +261,7 @@ h6 {
 
 .icon a:hover {
   color: var(--primary-color);
-  background-color: var(--primary-light);
+  background-color: #8b451332 ;
 }
 
 .icon svg {
@@ -761,6 +761,12 @@ h6 {
 .main-nav.scrolled .nav-right .icon span {
   text-shadow: none;
   color: var(--black);
+}
+.main-nav.scrolled .nav-links li a:hover,
+.main-nav.scrolled .nav-left .logo:hover,
+.main-nav.scrolled .nav-right .icon a:hover,
+.main-nav.scrolled .nav-right .icon span:hover {
+color: var(--primary-color);
 }
 
 .main-nav.scrolled .search-btn i {

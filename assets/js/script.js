@@ -606,6 +606,142 @@ window.addEventListener('click', function(e) {
 });
 
 
+// Register form modal
+// Toggle password visibility using Font Awesome icons
+function togglePasswordVisibility(inputId, toggleElement) {
+  const passwordInput = document.getElementById(inputId);
+  const icon = toggleElement.querySelector('i');
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    icon.classList.remove('fa-eye');
+    icon.classList.add('fa-eye-slash');
+    toggleElement.setAttribute('aria-pressed', 'true');
+  } else {
+    passwordInput.type = 'password';
+    icon.classList.remove('fa-eye-slash');
+    icon.classList.add('fa-eye');
+    toggleElement.setAttribute('aria-pressed', 'false');
+  }
+}
+
+// Validate password, update strength bar and checkmark indicators
+function validatePassword(password) {
+  const requirements = {
+    length: password.length >= 8,
+    number: /[0-9]/.test(password),
+    case: /[A-Z]/.test(password) && /[a-z]/.test(password),
+    symbol: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)
+  };
+
+  document.getElementById('req-length').querySelector('.checkmark').classList.toggle('valid', requirements.length);
+  document.getElementById('req-number').querySelector('.checkmark').classList.toggle('valid', requirements.number);
+  document.getElementById('req-case').querySelector('.checkmark').classList.toggle('valid', requirements.case);
+  document.getElementById('req-symbol').querySelector('.checkmark').classList.toggle('valid', requirements.symbol);
+
+  let validCount = 0;
+  for (let key in requirements) {
+    if (requirements[key]) validCount++;
+  }
+  const strengthPercent = (validCount / 4) * 100;
+  const strengthBarFill = document.getElementById('strength-bar-fill');
+  strengthBarFill.style.width = strengthPercent + '%';
+  if (strengthPercent <= 50) {
+    strengthBarFill.style.backgroundColor = 'red';
+  } else if (strengthPercent < 100) {
+    strengthBarFill.style.backgroundColor = 'orange';
+  } else {
+    strengthBarFill.style.backgroundColor = 'green';
+  }
+  return validCount === 4;
+}
+
+// Validate email using regex
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+// Real-time validations
+document.getElementById('password').addEventListener('input', function() {
+  validatePassword(this.value);
+  document.getElementById('password-error').style.display = 'none';
+  const confirmPassword = document.getElementById('confirm-password').value;
+  if (confirmPassword) {
+    document.getElementById('confirm-password-error').style.display =
+      this.value === confirmPassword ? 'none' : 'block';
+  }
+});
+
+document.getElementById('confirm-password').addEventListener('input', function() {
+  const password = document.getElementById('password').value;
+  document.getElementById('confirm-password-error').style.display =
+    this.value === password ? 'none' : 'block';
+});
+
+document.getElementById('email').addEventListener('input', function() {
+  document.getElementById('email-error').style.display = 'none';
+});
+
+document.getElementById('first-name').addEventListener('input', function() {
+  document.getElementById('first-name-error').style.display = 'none';
+});
+
+document.getElementById('last-name').addEventListener('input', function() {
+  document.getElementById('last-name-error').style.display = 'none';
+});
+
+// Form submission handler with simulated loading state
+document.getElementById('register-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const firstName = document.getElementById('first-name').value;
+  const lastName = document.getElementById('last-name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+  const termsChecked = document.getElementById('terms').checked;
+  let isValid = true;
+  
+  if (!firstName.trim()) {
+    document.getElementById('first-name-error').style.display = 'block';
+    isValid = false;
+  }
+  if (!lastName.trim()) {
+    document.getElementById('last-name-error').style.display = 'block';
+    isValid = false;
+  }
+  if (!validateEmail(email)) {
+    document.getElementById('email-error').style.display = 'block';
+    isValid = false;
+  }
+  if (!validatePassword(password)) {
+    document.getElementById('password-error').style.display = 'block';
+    isValid = false;
+  }
+  if (password !== confirmPassword) {
+    document.getElementById('confirm-password-error').style.display = 'block';
+    isValid = false;
+  }
+  if (!termsChecked) {
+    alert('You must agree to the Terms of Service and Privacy Policy.');
+    isValid = false;
+  }
+  
+  if (isValid) {
+    const submitBtn = document.getElementById('submit-btn');
+    const spinner = document.getElementById('spinner');
+    submitBtn.disabled = true;
+    spinner.style.display = 'inline-block';
+    setTimeout(function() {
+      alert('Registration successful!');
+      submitBtn.disabled = false;
+      spinner.style.display = 'none';
+      // Typically, form data would be sent to the server here.
+    }, 2000);
+  }
+});
+
+
+
 // About
  // Add Google Fonts dynamically
  const fontLink = document.createElement('link');

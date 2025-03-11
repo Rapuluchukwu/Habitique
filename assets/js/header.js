@@ -52,7 +52,7 @@ document.write(`
             </ul>
           </li>
           <li><a href="about.html">About</a></li>
-          <li><a href="">Contact us</a></li>
+          <li><a href="contact.html">Contact us</a></li>
         </ul>
       </div>
 
@@ -189,8 +189,53 @@ document.write(`
         </ul>
       </div>
     </nav>
-
     <!-- Add overlay div for sidebar -->
     <div class="sidebar-overlay"></div>
+
+
+
+
+
+         <!-- Sign In Modal (hidden by default) -->
+  <div id="signin-modal" class="modal hidden">
+    <button class="close-modal" id="closeModal">&times;</button>
+    <div class="modal-content">
+      <!-- Left Section: Image -->
+      <div class="image-section">
+        <div class="logo"><span>HABITI</span>QUE</div>
+        <img src="assets/images/Sign-in-Image.jpg" alt="Interior design with comfortable chairs">
+      </div>
+      <!-- Right Section: Sign In Form -->
+      <div class="form-section">
+        <h1>SIGN IN</h1>
+        <form id="signin-form">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" placeholder="example@mail.com" required>
+          <div id="email-error" class="error-message">Please enter a valid email address</div>
+  
+          <label for="password">PASSWORD</label>
+          <div class="password-container">
+            <input type="password" id="password" placeholder="********" required>
+            <span class="toggle-password" onclick="togglePasswordVisibility('password', this)">
+              <i class="fa-solid fa-eye"></i>
+            </span>
+          </div>
+          <div id="password-error" class="error-message">Please enter your password</div>
+  
+          <button type="submit" id="submit-btn">
+            SIGN IN <span class="right-arrow">→</span>
+          </button>
+        </form>
+        <div class="register-link">
+          Don't have an account? <a href="#"  >Register here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Register form-->
+  
   </header>
   `);
