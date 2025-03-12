@@ -94,7 +94,7 @@ document.write(`
         <div class="footer-bottom">
           <!-- Left: Logo (always visible) -->
           <div class="footer-logo">
-            <a href="#home" class="logo">
+            <a href="index.html" class="logo">
               <span class="logo-brown">HABITI</span><span class="logo-white">QUE</span>
             </a>
           </div>

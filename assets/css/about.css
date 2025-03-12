@@ -7,6 +7,20 @@
     --habitique-bg-dark: #fff;
   }
   
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  /* Typography */
+  body {
+    font-family: var(--habitique-primary-font);
+    line-height: 1.6;
+    padding-top: 40px;
+    color: #333;
+    background-color: var(--habitique-bg-dark);
+  }
+  
   .habitique-intro, 
   .habitique-vision, 
   .habitique-team, 
@@ -36,21 +50,14 @@
   .habitique-accent-line {
     width: 80px;
     height: 3px;
-    background-color: var(--habitique-accent-color);
     margin: 1rem 0 2rem;
+    background-color: var(--habitique-accent-color);
   }
   
   .habitique-accent-line.habitique-center {
     margin: 1rem auto 2rem;
   }
   
-  /* Typography */
-  body {
-    font-family: var(--habitique-primary-font);
-    line-height: 1.6;
-    color: #333;
-    background-color: var(--habitique-bg-dark);
-  }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--habitique-secondary-font);
@@ -98,21 +105,26 @@
   
   /* Images */
   img {
-    max-width: 100%;
     height: auto;
     display: block;
+    max-width: 100%;
     object-fit: cover;
+    border-radius: 15px;
   }
   
   /* Section Backgrounds */
   .habitique-intro,
   .habitique-vision,
-  .habitique-team,
   .habitique-media,
   .habitique-why-choose {
     background-color: var(--habitique-bg-light);
   }
   
+  .habitique-team {
+    background-image: url("assests/images/termImgage.webp");
+  }
+
+
   .habitique-story,
   .habitique-craftsmanship,
   .habitique-care {

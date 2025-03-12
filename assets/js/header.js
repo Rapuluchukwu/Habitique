@@ -235,7 +235,7 @@ document.write(`
 
 
 
-  <!-- Register form-->
+  <!-- Register form -->
   
   </header>
   `);
