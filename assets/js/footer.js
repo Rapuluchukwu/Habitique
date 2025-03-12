@@ -2,7 +2,6 @@
 document.write(`
  <!-- Modern Footer with Integrated Sections -->
   <footer class="modern-footer">
-    <div class="page-container">
       <div class="footer-content">
         <div class="footer-top">
           <!-- Contact Column -->

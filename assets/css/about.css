@@ -16,7 +16,8 @@
   body {
     font-family: var(--habitique-primary-font);
     line-height: 1.6;
-    padding-top: 40px;
+    /* padding: 50px; */
+
     color: #333;
     background-color: var(--habitique-bg-dark);
   }
@@ -347,4 +348,5 @@
 .hamburger a:hover {
   color: #8B4513 !important;
 }
+
 

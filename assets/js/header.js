@@ -190,7 +190,7 @@ document.write(`
       </div>
     </nav>
     <!-- Add overlay div for sidebar -->
-    <div class="sidebar-overlay"></div>
+    <!-- div class="sidebar-overlay"></div> -->
 
 
 
