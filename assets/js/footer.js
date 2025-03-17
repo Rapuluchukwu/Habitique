@@ -1,4 +1,3 @@
-// Create a file named header.js
 document.write(`
  <!-- Modern Footer with Integrated Sections -->
   <footer class="modern-footer">

@@ -217,14 +217,13 @@ h6 {
   }
 
   .arrow {
-    width: 40px;
-    height: 40px;
+    display: none;
   }
 }
 
 /* Main Navigation States */
 /* In-Hero */
-.main-nav.in-hero {
+/* .main-nav.in-hero {
   transition: all 0.3s ease;
   background-color: transparent;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
@@ -245,7 +244,7 @@ h6 {
 .main-nav.in-hero .search-btn {
   border-color: rgba(255, 255, 255, 0.4);
   background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* Scrolled */
 /* .main-nav.scrolled {
