@@ -138,60 +138,83 @@ window.addEventListener("scroll", function () {
 
 
   // ===== Carousel functionality =====
-  function initCarousel() {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    
-    if (!slides.length || !dots.length) return;
-    
-    let currentSlide = 0;
-    let slideInterval;
+// ===== Carousel functionality =====
+function initCarousel() {
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (!slides.length || !dots.length) return;
+  
+  let currentSlide = 0;
+  let slideInterval;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const swipeThreshold = 50;
 
-    // Function to change slide
-    function changeSlide(n) {
-      // Remove active class from current slide and dot
-      slides[currentSlide].classList.remove('active');
-      dots[currentSlide].classList.remove('active');
+  // Touch handlers
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  }
 
-      // Update current slide index
-      currentSlide = (n + slides.length) % slides.length;
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    const deltaX = touchEndX - touchStartX;
 
-      // Add active class to new slide and dot
-      slides[currentSlide].classList.add('active');
-      dots[currentSlide].classList.add('active');
-    }
-
-    // Set up dot click events
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        changeSlide(index);
-      });
-    });
-
-    // Start auto-advance
-    function startSlideTimer() {
-      slideInterval = setInterval(() => {
+    if (Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) {
+        changeSlide(currentSlide - 1);
+      } else {
         changeSlide(currentSlide + 1);
-      }, 5000); // Change slide every 5 seconds
-    }
-    
-    // Start initial timer
-    startSlideTimer();
-
-    // Pause auto-advance when interacting with carousel
-    const carousel = document.querySelector('.carousel');
-    if (carousel) {
-      carousel.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-      });
-
-      carousel.addEventListener('mouseleave', () => {
-        startSlideTimer();
-      });
+      }
+      clearInterval(slideInterval);
+      startSlideTimer();
     }
   }
-  
-  initCarousel();
+
+  function changeSlide(n) {
+    const direction = n > currentSlide ? 'next' : 'prev';
+    
+    // Remove active class
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+
+    // Add direction classes
+    slides[currentSlide].classList.add(direction);
+    
+    // Update current slide
+    currentSlide = (n + slides.length) % slides.length;
+    
+    // Add new classes
+    slides[currentSlide].classList.add('active', direction);
+    dots[currentSlide].classList.add('active');
+
+    // Cleanup direction classes
+    setTimeout(() => {
+      slides.forEach(slide => slide.classList.remove('next', 'prev'));
+    }, 500);
+  }
+
+  // Event listeners
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+    carousel.addEventListener('touchstart', handleTouchStart);
+    carousel.addEventListener('touchend', handleTouchEnd);
+    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carousel.addEventListener('mouseleave', startSlideTimer);
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => changeSlide(index));
+  });
+
+  function startSlideTimer() {
+    slideInterval = setInterval(() => changeSlide(currentSlide + 1), 5000);
+  }
+
+  startSlideTimer();
+}
+
+// Rest of the existing script.js remains the same...
 
   // ===== Testimonials carousel functionality =====
 function initTestimonialsCarousel() {
