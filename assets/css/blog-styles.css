@@ -26,7 +26,7 @@
 /* Base Styles */
 body {
     line-height: 1.6;
-    padding-top: 50px;
+    padding-top: 70px;
     overflow-x: hidden;
     color: var(--dark-gray);
     font-family: 'Raleway', sans-serif;
@@ -156,6 +156,13 @@ a:hover {
 
 .custom-blog-card:hover .custom-blog-image img {
     transform: scale(1.05);
+}
+
+.custom-blog-image a {
+    position: relative;
+    z-index: 10;
+    display: block;
+    height: 100%;
 }
 
 .custom-blog-content {
@@ -306,10 +313,10 @@ a:hover {
 }
 
 /* Override icon styling from other CSS files */
-.nav-right .icon a svg,
+/* .nav-right .icon a svg,
 .hamburger a svg {
     fill: #000 !important;
-}
+} */
 
 .nav-right .icon a svg:hover,
 .hamburger a svg:hover {

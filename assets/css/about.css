@@ -16,7 +16,7 @@
   body {
     font-family: var(--habitique-primary-font);
     line-height: 1.6;
-    /* padding: 50px; */
+    padding-top: 50px;
 
     color: #333;
     background-color: var(--habitique-bg-dark);
@@ -208,10 +208,10 @@
   }
   
   .habitique-media-item {
-    position: relative;
     overflow: hidden;
     aspect-ratio: 4/3;
     border-radius: 4px;
+    position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
   
@@ -223,15 +223,15 @@
   }
   
   .habitique-media-overlay {
-    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     color: white;
+    position: absolute;
     padding: 2rem 1.5rem;
     transform: translateY(70%);
     transition: transform 0.3s ease;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
   }
   
   .habitique-media-item:hover img {
@@ -248,39 +248,39 @@
   
   .habitique-media-overlay p {
     margin: 0;
-    font-size: 0.9rem;
     opacity: 0.8;
+    font-size: 0.9rem;
   }
   
   .habitique-video-overlay .habitique-play-icon {
-    position: absolute;
-    top: -60px;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 3rem;
-    color: white;
-    background: rgba(139, 69, 19, 0.8);
+    top: -90px;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
     display: flex;
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
+    transform: translateX(-50%);
+    background: rgba(139, 69, 19, 0.8);
   }
   
   /* Features Section */
   .habitique-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    max-width: 1200px;
+    display: grid;
     margin: 0 auto;
+    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   
   .habitique-feature {
-    text-align: center;
     padding: 2rem;
     border-radius: 4px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -292,12 +292,12 @@
   .habitique-feature-icon {
     width: 80px;
     height: 80px;
-    margin: 0 auto 1.5rem;
     display: flex;
+    border-radius: 50%;
     align-items: center;
+    margin: 0 auto 1.5rem;
     justify-content: center;
     background-color: rgba(139, 69, 19, 0.1);
-    border-radius: 50%;
   }
   
   .habitique-feature h3 {
@@ -327,10 +327,10 @@
   
 
 /* Override icon styling from other CSS files */
-.nav-right .icon a svg,
+/* .nav-right .icon a svg,
 .hamburger a svg {
   fill: #000 !important;
-}
+} */
 
 /* Override link styling from other CSS files */
 .nav-center a,

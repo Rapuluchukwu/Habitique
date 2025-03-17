@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebar: document.querySelector('.sidebar'),
     overlay: document.querySelector('.sidebar-overlay'),
     dropdownToggles: document.querySelectorAll('.dropdown-toggle'),
-    mainNav: document.querySelector('.main-nav'),
+    // mainNav: document.querySelector('.main-nav'),
     heroSection: document.querySelector('.carousel')
   };
   
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Toggle sidebar called");
     navElements.sidebar.classList.toggle('active');
     navElements.overlay.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
+    // document.body.classList.toggle('no-scroll');
   }
   
   // Event listeners for sidebar
@@ -194,45 +194,157 @@ window.addEventListener("scroll", function () {
   initCarousel();
 
   // ===== Testimonials carousel functionality =====
-  function initTestimonialsCarousel() {
-    const testimonialsCarousel = document.querySelector('.testimonials-carousel');
-    const testimonialsTrack = document.querySelector('.testimonials-track');
-    
-    if (!testimonialsCarousel || !testimonialsTrack) return;
-    
-    // When the user hovers over the carousel, pause the scroll
-    testimonialsCarousel.addEventListener('mouseenter', () => {
-      testimonialsTrack.style.animationPlayState = 'paused';
-    });
-    
-    // When the user moves the mouse away, resume the scroll
-    testimonialsCarousel.addEventListener('mouseleave', () => {
+function initTestimonialsCarousel() {
+  const testimonialsCarousel = document.querySelector('.testimonials-carousel');
+  const testimonialsTrack = document.querySelector('.testimonials-track');
+  const leftArrow = document.querySelector('.carousel-arrow-left');
+  const rightArrow = document.querySelector('.carousel-arrow-right');
+  const slides = document.querySelectorAll('.testimonial-slide');
+  
+  if (!testimonialsCarousel || !testimonialsTrack || !slides.length) return;
+  
+  // Calculate slide width including margin
+  const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
+  
+  // When the user hovers over the carousel, pause the scroll
+  testimonialsCarousel.addEventListener('mouseenter', () => {
+    testimonialsTrack.style.animationPlayState = 'paused';
+  });
+  
+  // When the user moves the mouse away, resume the scroll
+  testimonialsCarousel.addEventListener('mouseleave', () => {
+    if (!testimonialsTrack.classList.contains('manual-scroll')) {
       testimonialsTrack.style.animationPlayState = 'running';
-    });
-    
-    // Additionally, pause on click
-    testimonialsCarousel.addEventListener('click', () => {
-      testimonialsTrack.style.animationPlayState = 'paused';
-    });
+    }
+  });
+  
+  // Remove default animation to enable manual scrolling
+  function enableManualScrolling() {
+    // Stop the automatic animation
+    testimonialsTrack.style.animation = 'none';
+    // Mark as being manually scrolled
+    testimonialsTrack.classList.add('manual-scroll');
   }
   
-  initTestimonialsCarousel();
+  // Current index of the first visible slide
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  
+  // Function to scroll to a specific slide
+  function scrollToSlide(index) {
+    // Enable manual scrolling if not already enabled
+    if (!testimonialsTrack.classList.contains('manual-scroll')) {
+      enableManualScrolling();
+    }
+    
+    // Ensure index is within bounds with wrapping
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    
+    currentIndex = index;
+    
+    // Calculate position and apply transform
+    const position = -slideWidth * currentIndex;
+    testimonialsTrack.style.transition = 'transform 0.5s ease';
+    testimonialsTrack.style.transform = `translateX(${position}px)`;
+  }
+  
+  // Handle left arrow click
+  leftArrow.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the carousel click event from firing
+    scrollToSlide(currentIndex - 1);
+  });
+  
+  // Handle right arrow click
+  rightArrow.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the carousel click event from firing
+    scrollToSlide(currentIndex + 1);
+  });
+  
+  // Reset to auto-animation after period of inactivity
+  let resetTimer;
+  
+  function resetToAutoScroll() {
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      if (testimonialsTrack.classList.contains('manual-scroll')) {
+        // Remove manual scroll class
+        testimonialsTrack.classList.remove('manual-scroll');
+        
+        // Reset transform and transition
+        testimonialsTrack.style.transition = 'none';
+        testimonialsTrack.style.transform = '';
+        
+        // Force reflow
+        void testimonialsTrack.offsetWidth;
+        
+        // Restart animation
+        testimonialsTrack.style.animation = 'scrollTestimonials 40s linear infinite';
+        testimonialsTrack.style.animationPlayState = 'running';
+      }
+    }, 5000); // Reset after 5 seconds of inactivity
+  }
+  
+  // Set up the reset timer after clicks
+  leftArrow.addEventListener('click', resetToAutoScroll);
+  rightArrow.addEventListener('click', resetToAutoScroll);
+  
+  // Clone slides for infinite scrolling when in manual mode
+  function cloneSlides() {
+    // Clone the first few slides and append them to the end
+    const slidesToClone = Math.min(3, slides.length);
+    for (let i = 0; i < slidesToClone; i++) {
+      const clone = slides[i].cloneNode(true);
+      clone.classList.add('clone');
+      testimonialsTrack.appendChild(clone);
+    }
+    
+    // Clone the last few slides and prepend them to the beginning
+    for (let i = slides.length - 1; i >= Math.max(0, slides.length - slidesToClone); i--) {
+      const clone = slides[i].cloneNode(true);
+      clone.classList.add('clone');
+      testimonialsTrack.insertBefore(clone, testimonialsTrack.firstChild);
+    }
+    
+    // Adjust the initial position to account for prepended clones
+    currentIndex = slidesToClone;
+    testimonialsTrack.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+  }
+  
+  // Handle transition end to create infinite scroll effect
+  testimonialsTrack.addEventListener('transitionend', () => {
+    if (!testimonialsTrack.classList.contains('manual-scroll')) return;
+    
+    // If we've scrolled past the original slides, jump to the appropriate clone
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
+      testimonialsTrack.style.transition = 'none';
+      testimonialsTrack.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    } else if (currentIndex < 0) {
+      currentIndex = totalSlides - 1;
+      testimonialsTrack.style.transition = 'none';
+      testimonialsTrack.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+    }
+  });
+}
 
-  // ===== Card interactivity =====
-  function initCards() {
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        const category = this.classList[1];
-        console.log(`User clicked on ${category ? category.replace('-', ' ') : 'card'}`);
-        // Here you could add navigation to category pages
-        // window.location.href = `/${category}.html`;
-      });
-    });
-  }
+initTestimonialsCarousel();
+
+// ===== Card interactivity =====
+function initCards() {
+  const cards = document.querySelectorAll('.card');
   
-  initCards();
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      const category = this.classList[1];
+      console.log(`User clicked on ${category ? category.replace('-', ' ') : 'card'}`);
+      // Here you could add navigation to category pages
+      // window.location.href = `/${category}.html`;
+    });
+  });
+}
+
+initCards();
 
   // ===== Promo Banner System (Unified) =====
 const bannerConfig = {
@@ -774,5 +886,10 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
   
   habitiqueSections.forEach(section => observer.observe(section));
 });
+
+
+
+
+
 
 

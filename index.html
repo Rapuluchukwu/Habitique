@@ -16,8 +16,8 @@
 </head>
 
 <body>
-<!-- header -->
-<script src="assets/js/header.js"></script>
+  <!-- header -->
+  <script src="assets/js/header.js"></script>
 
   <!-- Carousel -->
   <div class="carousel">
@@ -99,35 +99,60 @@
   <section class="book-consultation">
     <div class="book-container">
       <div class="consultation-content">
-        <h2>BOOK A DESIGN CONSULTATION</h2>
-        <p>
-          The Habitique Gallery’s mission is to help turn your dream interior
-          into a reality. Our team of talented stylists share a passion to
-          create beautiful spaces for you to call home.
-          Because life is too short not to love where you live.
+        <h2 class="section-heading animate-slide-up">
+          Transform Your Space with Expert Guidance
+        </h2>
+        <p class="section-subtext animate-fade-in">
+          Your dream interior is just one conversation away. Our award-winning designers will help you:
         </p>
-        <a href="#" class="view-more-btn">
-          View more
-          <i class="fa-solid fa-chevron-right"></i>
-        </a>
+
+        <ul class="benefits-list">
+          <li class="benefit-item animate-slide-right">
+            <i class="fas fa-check-circle"></i>
+            Discover your unique style identity
+          </li>
+          <li class="benefit-item animate-slide-right" style="--delay: 0.2s">
+            <i class="fas fa-check-circle"></i>
+            Create a tailored design roadmap
+          </li>
+          <li class="benefit-item animate-slide-right" style="--delay: 0.4s">
+            <i class="fas fa-check-circle"></i>
+            Access exclusive trade resources
+          </li>
+        </ul>
+
+        <div class="cta-wrapper animate-pop-in">
+          <a href="booking.html" class="cta-button">
+            Start Your Now!
+            <i class="fas fa-arrow-right button-icon"></i>
+          </a>
+          <p class="cta-note">
+            ⭐️ Rated 4.9/5 by 1000+ happy clients
+          </p>
+        </div>
       </div>
-      <div class="consultation-image">
-        <img src="assets/images/consultation-img.jpg" alt="Design consultation meeting">
+
+      <div class="consultation-image hover-zoom">
+        <img src="assets/images/consultation-img.jpg" alt="Happy client discussing design plans with our expert"
+          class="image-frame">
+        <div class="image-overlay">
+          <p class="overlay-text">"They perfectly captured our vision!"</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Service Section -->
   <!-- <section class="services-container"> -->
-    <!-- Left Column -->
-    <!-- <div class="service-box left">
+  <!-- Left Column -->
+  <!-- <div class="service-box left">
       <div class="service-icon"><i class="fas fa-thumbs-up"></i></div>
       <h3>100% Satisfaction Guaranteed</h3>
       <p>Our quality's designed to embrace—each piece a blend of art and grace.</p>
     </div> -->
-    <!-- Center Column -->
-    <!-- <div class="center-column"> -->
-      <!-- <div class="service-box">
+  <!-- Center Column -->
+  <!-- <div class="center-column"> -->
+  <!-- <div class="service-box">
         <div class="service-icon"><i class="fas fa-headset"></i></div>
         <h3>24/7 Online Service</h3>
         <p>We're here day or night, keeping your decor just right.</p>
@@ -138,9 +163,9 @@
         <p>Quick as a flash, we bring style to your place in a dash.</p>
       </div>
     </div> -->
-    <!-- Right Column -->
-    <!-- <div class="service-box right"> -->
-      <!-- <div class="service-icon"><i class="fas fa-lock"></i></div>
+  <!-- Right Column -->
+  <!-- <div class="service-box right"> -->
+  <!-- <div class="service-icon"><i class="fas fa-lock"></i></div>
       <h3>Payment With Secure System</h3>
       <p>Safe transactions set the base—trust and ease in every case.</p>
     </div>
@@ -165,8 +190,7 @@
             <h3 class="blog-title">The Art of Minimalist Design</h3>
             <p class="blog-excerpt">Discover how less becomes more with our guide to creating elegant, clutter-free
               spaces that promote calm and clarity.</p>
-            <a href="minimalist-design.html" class="read-more">Read More <i
-                class="fa-solid fa-arrow-right"></i></a>
+            <a href="minimalist-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -181,8 +205,7 @@
             <h3 class="blog-title">Sustainable Furniture Choices</h3>
             <p class="blog-excerpt">Learn how eco-friendly materials and ethical manufacturing are shaping the future of
               interior design.</p>
-            <a href="sustainable-furniture.html" class="read-more">Read More <i
-                class="fa-solid fa-arrow-right"></i></a>
+            <a href="sustainable-furniture.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -197,8 +220,7 @@
             <h3 class="blog-title">Color Psychology in Interior Design</h3>
             <p class="blog-excerpt">Explore how different colors affect mood and atmosphere, and discover how to create
               the perfect color palette for your home.</p>
-            <a href="color-psychology.html" class="read-more">Read More <i
-                class="fa-solid fa-arrow-right"></i></a>
+            <a href="color-psychology.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -257,109 +279,119 @@
 
   <!-- Testimonials Carousel Section -->
   <section class="testimonials-carousel-section">
-    <div class="page-container">
-      <h2 class="section-title">What Our Customers Say</h2>
-      <div class="testimonials-carousel">
-        <div class="testimonials-track">
-          <div class="testimonial-slide">
-            <blockquote>
-              "I have never experienced such a transformation in my living space. Habitique’s design consultation was
-              comprehensive and every detail was thoughtfully considered. My home now feels both elegant and inviting."
-            </blockquote>
-            <div class="testimonial-author">
-              <img src="assets/images/testimonial2.webp" alt="Mark S." class="author-img">
-              <span>– Jane Doe</span>
-            </div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-carousel">
+      <div class="testimonials-track">
+        <div class="testimonial-slide">
+          <blockquote>
+            "I have never experienced such a transformation in my living space. Habitique's design consultation was
+            comprehensive and every detail was thoughtfully considered. My home now feels both elegant and inviting."
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial2.webp" alt="Mark S." class="author-img">
+            <span>– Jane Doe</span>
           </div>
-          <!-- Testimonial Slide 2 (with image) -->
-          <div class="testimonial-slide">
-            <blockquote>
-              "From the moment I stepped into their showroom, I was impressed by the creative approach and quality of
-              craftsmanship. Their expert advice helped me choose pieces that perfectly complement my decor."
-            </blockquote>
-            <div class="testimonial-author">
-              <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
-              <span>– Mark Steven</span>
-            </div>
+        </div>
+        <!-- Testimonial Slide 2 (with image) -->
+        <div class="testimonial-slide">
+          <blockquote>
+            "From the moment I stepped into their showroom, I was impressed by the creative approach and quality of
+            craftsmanship. Their expert advice helped me choose pieces that perfectly complement my decor."
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
+            <span>– Mark Steven</span>
           </div>
-          
-          <div class="testimonial-slide">
-            <blockquote>
-              "The detailed design insights provided were incredibly helpful. I loved the in-depth explanation of color
-              palettes and furniture arrangements which turned my vision into reality."
-            </blockquote>
-            <div class="testimonial-author">
-              <img src="assets/images/testimonial4.webp" alt="Kevin L." class="author-img">
-              <span>– Sarah Wills</span>
-            </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <blockquote>
+            "The detailed design insights provided were incredibly helpful. I loved the in-depth explanation of color
+            palettes and furniture arrangements which turned my vision into reality."
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial4.webp" alt="Kevin L." class="author-img">
+            <span>– Sarah Wills</span>
           </div>
-          
-          <div class="testimonial-slide">
-            <blockquote>
-              "Every piece I purchased is a statement of quality and style. The entire process—from consultation to
-              delivery—was smooth and truly inspiring. Habitique redefines home decor."
-            </blockquote>
-            <div class="testimonial-author">
-              <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
-              <span>– Kevin Livingstone</span>
-            </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <blockquote>
+            "Every piece I purchased is a statement of quality and style. The entire process—from consultation to
+            delivery—was smooth and truly inspiring. Habitique redefines home decor."
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial3.webp" alt="Alex M." class="author-img">
+            <span>– Kevin Livingstone</span>
           </div>
-          
-          <div class="testimonial-slide">
-            <blockquote>
-              "Their commitment to customer satisfaction is evident in every step of the process. I felt supported and
-              inspired throughout my entire home makeover journey, and the results speak for themselves."
-            </blockquote>
-            <div class="testimonial-author">
-              <img src="assets/images/testimonial6.webp" alt="Alex M." class="author-img">
-              <span>– Innocent Akamdiocha</span>
-            </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <blockquote>
+            "Their commitment to customer satisfaction is evident in every step of the process. I felt supported and
+            inspired throughout my entire home makeover journey, and the results speak for themselves."
+          </blockquote>
+          <div class="testimonial-author">
+            <img src="assets/images/testimonial6.webp" alt="Alex M." class="author-img">
+            <span>– Innocent Akamdiocha</span>
           </div>
-          <!-- Testimonial Slide 6 (with image) -->
-          <div class="testimonial-slide">
-            <blockquote>
-              "Habitique not only offers top-notch furniture but also delivers an exceptional experience in interior
-              design. The transformation of my home has been nothing short of extraordinary."
-            </blockquote>
-            <div class="testimonial-author">
-              <span>– Emily Raymond</span>
-            </div>
+        </div>
+        <!-- Testimonial Slide 6 (with image) -->
+        <div class="testimonial-slide">
+          <blockquote>
+            "Habitique not only offers top-notch furniture but also delivers an exceptional experience in interior
+            design. The transformation of my home has been nothing short of extraordinary."
+          </blockquote>
+          <div class="testimonial-author">
+            <span>– Emily Raymond</span>
           </div>
         </div>
       </div>
+      <button class="carousel-arrow carousel-arrow-left" aria-label="Scroll testimonials left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+      <button class="carousel-arrow carousel-arrow-right" aria-label="Scroll testimonials right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
     </div>
   </section>
 
 
   <!-- Footer -->
- <script src="assets/js/footer.js"></script>
+  <script src="assets/js/footer.js"></script>
 
-<!-- Overlay Background -->
-<div id="promo-overlay" class="promo-overlay"></div>
+  <!-- Overlay Background -->
+  <div id="promo-overlay" class="promo-overlay"></div>
 
-<!-- Promotional Banner (inserted via JavaScript) -->
-<div id="promo-banner" class="promo-banner">
-  <div class="promo-image">
-    <!-- Placeholder for the banner image -->
-    <img src="assets/images/promo-banner-imgage.webp" alt="Special offer" />
-  </div>
-  <div class="promo-content">
-    <h3>Limited Time Offer!</h3>
-    <p>
-      Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
-    </p>
-    <div class="promo-buttons">
-      <button id="shop-now-btn">Shop Now</button>
-      <button class="close-btn" id="close-banner">×</button>
+  <!-- Promotional Banner (inserted via JavaScript) -->
+  <div id="promo-banner" class="promo-banner">
+    <div class="promo-image">
+      <!-- Placeholder for the banner image -->
+      <img src="assets/images/promo-banner-imgage.webp" alt="Special offer" />
+    </div>
+    <div class="promo-content">
+      <h3>Limited Time Offer!</h3>
+      <p>
+        Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
+      </p>
+      <div class="promo-buttons">
+        <button id="shop-now-btn">Shop Now</button>
+        <button class="close-btn" id="close-banner">×</button>
+      </div>
     </div>
   </div>
-</div>
 
 
-  
-  
 
-<!-- -------------------------------------------------------------------------- -->
+
+
+  <!-- -------------------------------------------------------------------------- -->
   <script src="assets/js/script.js"></script>
 </body>
 

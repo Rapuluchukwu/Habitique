@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Habitique Design Consultation</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <script src="assets/js/header.js"></script>
+
+
+    <div class="alert-container" id="alertContainer">
+        <div class="alert alert-error hidden" id="errorAlert">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorMessage">Please fix the errors in the form</span>
+            <button class="alert-close" id="closeErrorAlert"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="alert alert-success hidden" id="successAlert">
+            <i class="fas fa-check-circle"></i>
+            <span id="successMessage">Form submitted successfully!</span>
+            <button class="alert-close" id="closeSuccessAlert"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <main class="habitique-main">
+        <section class="booking-hero">
+            <div class="booking-overlay"></div>
+            <div class="booking-hero-content">
+                <h1>Transform Your Space</h1>
+                <p>Schedule a personal consultation with our expert designers</p>
+            </div>
+        </section>
+
+        <section class="booking-container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <div class="booking-heading">
+                        <h2>Design Consultation Booking</h2>
+                        <p>Take the first step towards your dream interior</p>
+                    </div>
+
+                    <div class="booking-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>45-Minute Session</h3>
+                                <p>Focused consultation to address your needs</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <div>
+                                <h3>Expert Guidance</h3>
+                                <p>Professional advice from certified designers</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h3>Personalized Plan</h3>
+                                <p>Receive a custom design approach after your session</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-container">
+                    <form id="habitiqueBookingForm" class="booking-form" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                            </div>
+                            <div class="booking-error-message" id="fullNameError"></div>
+                        </div>
+
+                        <!-- Original email input in booking.html -->
+                        <div class="form-group">
+                            <label for="bookingEmail">Email Address <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="bookingEmail" name="email" placeholder="Your email address"
+                                    required>
+                            </div>
+                            <div class="booking-error-message" id="bookingEmailError"></div>
+                        </div>
+
+                        <!-- Original phone input in booking.html -->
+                        <div class="form-group">
+                            <label for="bookingPhone">Phone Number <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="bookingPhone" name="phone" placeholder="Your phone number"
+                                    required>
+                            </div>
+                            <div class="booking-error-message" id="bookingPhoneError"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="preferredDate" name="preferredDate" required>
+                                </div>
+                                <div class="booking-error-message" id="preferredDateError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time <span class="required">*</span></label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-clock"></i>
+                                    <select id="preferredTime" name="preferredTime" required>
+                                        <option value="" disabled selected>Select time</option>
+                                        <option value="9:00 AM">9:00 AM</option>
+                                        <option value="10:00 AM">10:00 AM</option>
+                                        <option value="11:00 AM">11:00 AM</option>
+                                        <option value="1:00 PM">1:00 PM</option>
+                                        <option value="2:00 PM">2:00 PM</option>
+                                        <option value="3:00 PM">3:00 PM</option>
+                                        <option value="4:00 PM">4:00 PM</option>
+                                    </select>
+                                </div>
+                                <div class="booking-error-message" id="preferredTimeError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consultationType">Consultation Type <span class="required">*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-list"></i>
+                                <select id="consultationType" name="consultationType" required>
+                                    <option value="" disabled selected>Select consultation type</option>
+                                    <option value="Interior Design Advice">Interior Design Advice</option>
+                                    <option value="Furniture Selection">Furniture Selection</option>
+                                    <option value="Space Planning">Space Planning</option>
+                                    <option value="Color Consultation">Color Consultation</option>
+                                    <option value="Lighting Design">Lighting Design</option>
+                                </select>
+                            </div>
+                            <div class="booking-error-message" id="consultationTypeError"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-comment"></i>
+                                <textarea id="message" name="message"
+                                    placeholder="Share details about your space and design goals" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="radio-group">
+                            <p class="radio-title">Preferred Contact Method <span class="required">*</span></p>
+                            <div class="radio-options">
+                                <div class="radio-option">
+                                    <input type="radio" id="contactEmail" name="contactMethod" value="email" required
+                                        checked>
+                                    <label for="contactEmail">Email</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="contactPhone" name="contactMethod" value="phone">
+                                    <label for="contactPhone">Phone</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="contactBoth" name="contactMethod" value="both">
+                                    <label for="contactBoth">Both</label>
+                                </div>
+                            </div>
+                            <div class="booking-error-message" id="contactMethodError"></div>
+                        </div>
+
+                        <div class="form-group terms-group">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="termsAgree" name="termsAgree" required>
+                                <label for="termsAgree">I agree to Habitique's <a href="#" class="terms-link">terms of
+                                        service</a> and <a href="#" class="terms-link">privacy policy</a> <span
+                                        class="required">*</span></label>
+                            </div>
+                            <div class="booking-error-message" id="termsAgreeError"></div>
+                        </div>
+
+                        <div class="form-footer">
+                            <p class="required-note"><span class="required">*</span> Required fields</p>
+                            <button type="submit" class="submit-button">
+                                <span>Book Your Consultation</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Replace your existing booking-confirmation div with this one -->
+                    <div class="booking-confirmation" id="bookingConfirmation">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Booking Confirmed!</h3>
+                        <p>Thank you for scheduling a consultation with Habitique. We've sent a confirmation to your
+                            email with all the details.</p>
+                        <div class="confirmation-details" id="confirmationDetails">
+                            <!-- This will be filled dynamically -->
+                        </div>
+                        <button id="newBookingBtn" class="secondary-button">
+                            <span>Book Another Consultation</span>
+                            <i class="fas fa-calendar-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <script src="assets/bjs/footer.js"></script>
+
+    <script src="assets/js/booking.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
