@@ -395,10 +395,10 @@ form, textarea {
 }
 
 /* Override icon styling from other CSS files */
-/* .nav-right .icon a svg,
+.nav-right .icon a svg,
 .hamburger a svg {
   fill: #000 !important;
-} */
+}
 
 /* Override link styling from other CSS files */
 .nav-center a,

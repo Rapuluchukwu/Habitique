@@ -1,5 +1,3 @@
-
-
 :root {
   --white: #fff;
   --black: #000;
@@ -29,19 +27,7 @@ body {
 
 header {
   font-family: 'Raleway', sans-serif !important;
-
 }
-
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  font-family: 'Raleway', sans-serif;
-} */
-
 
 /* Main Navigation */
 .main-nav {
@@ -58,7 +44,7 @@ h6 {
   backdrop-filter: blur(10px);
   justify-content: space-between;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
-  transition: all var(--transition-speed) ease;
+  transition: all 0.3s ease;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid rgba(139, 69, 19, 0.1);
 }
@@ -66,8 +52,8 @@ h6 {
 /* Logo Styling */
 .nav-left .logo {
   display: flex;
+  font-size: 2rem;
   font-weight: 700;
-  font-size: 2.5rem;
   padding-left: 30px;
   letter-spacing: 1px;
   align-items: center;
@@ -104,10 +90,10 @@ h6 {
   height: 70px;
   display: flex;
   padding: 0 20px;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 500;
   align-items: center;
-  color: var( --black);
+  color: var(--black);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -122,7 +108,7 @@ h6 {
   height: 10px;
   margin-left: 6px;
   position: relative;
-  transition: transform var(--transition-speed) ease;
+  transition: transform 0.3s ease;
 }
 
 .arrow-icon:before {
@@ -131,9 +117,9 @@ h6 {
   content: '';
   position: absolute;
   transform: rotate(45deg);
-  border-right: 2px solid var( --black);
-  border-bottom: 2px solid var( --black) ; 
-  transition: all var(--transition-speed) ease;
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black); 
+  transition: all 0.3s ease;
 }
 
 .dropdown-toggle.active .arrow-icon:before {
@@ -157,10 +143,10 @@ h6 {
   visibility: hidden;
   position: absolute;
   background: white;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transform: translateY(10px);
-  transition: all var(--transition-speed) ease;
+  transition: all 0.3s ease;
   border: 1px solid var(--gray-medium);
 }
 
@@ -207,7 +193,7 @@ h6 {
   padding: 0 40px 0 15px;
   background-color: var(--white);
   border: 1px solid var(--gray-medium);
-  transition: all var(--transition-speed) ease;
+  transition: all 0.3s ease;
 }
 
 .search-input:focus {
@@ -227,7 +213,7 @@ h6 {
   position: absolute;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition-speed) ease;
+  transition: color 0.3s ease;
 }
 
 .search-btn:hover {
@@ -256,7 +242,7 @@ h6 {
   padding: 8px 12px;
   border-radius: 4px;
   align-items: center;
-  color: var( --black);
+  color: var(--black);
   text-decoration: none;
   flex-direction: column;
   justify-content: center;
@@ -274,7 +260,7 @@ h6 {
 }
 
 .icon span {
-  font-size: 0.7rem;
+  font-size: 11px;
   font-weight: 500;
 }
 
@@ -289,7 +275,7 @@ h6 {
   padding: 8px 12px;
   border-radius: 4px;
   align-items: center;
-  color: var( --black);
+  color: var(--black);
   text-decoration: none;
   flex-direction: column;
   justify-content: center;
@@ -311,6 +297,123 @@ h6 {
   font-size: 11px;
   font-weight: 500;
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .main-nav {
+    padding: 0 20px;
+  }
+
+  .nav-links li a {
+    padding: 0 15px;
+  }
+
+  .nav-search {
+    width: 180px;
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-center {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-search {
+    width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-search {
+    display: none;
+  }
+
+  .main-nav {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .nav-left .logo {
+    font-size: 1.5rem;
+    padding-left: 0;
+  }
+
+  .nav-right {
+    padding-right: 0;
+  }
+
+  .right-icons {
+    display: flex;
+    margin-right: 0;
+  }
+
+  .icon {
+    margin-left: 2px;
+  }
+
+  .icon a {
+    padding: 4px;
+  }
+
+  .icon a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+  }
+
+  .icon svg {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 2px;
+  }
+
+  .icon span {
+    font-size: 8px;
+  }
+
+  .hamburger {
+    margin-left: 2px;
+  }
+
+  .hamburger a {
+    padding: 4px;
+  }
+
+  .hamburger a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+  }
+
+  .hamburger svg {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 2px;
+  }
+
+  .hamburger span {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hamburger span {
+    display: block;
+  }
+
+  .icon a, .hamburger a {
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Sidebar Styling */
 .sidebar {
   top: 0;
@@ -323,9 +426,9 @@ h6 {
   overflow: hidden;
   flex-direction: column;
   backdrop-filter: blur(10px);
+  transition: right 0.3s ease;
   background-color: var(--gray-light);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: right var(--transition-speed) ease;
 }
 
 .sidebar.active {
@@ -1304,7 +1407,7 @@ h6 {
 }
 
 /* Fix for hamburger icon and right icons on mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .main-nav {
     height: 60px;
     padding: 0 10px;
@@ -1325,7 +1428,7 @@ h6 {
 
   .hamburger {
     display: block;
-  }
+  } */
 
 
   .icon {
@@ -1345,7 +1448,7 @@ h6 {
   .icon span, .hamburger span {
     font-size: 10px; 
   }
-}
+
 
 /* For very small screens */
 @media (max-width: 480px) {

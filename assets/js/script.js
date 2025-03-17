@@ -138,83 +138,129 @@ window.addEventListener("scroll", function () {
 
 
   // ===== Carousel functionality =====
-// ===== Carousel functionality =====
-function initCarousel() {
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.querySelectorAll('.dot');
-  
-  if (!slides.length || !dots.length) return;
-  
-  let currentSlide = 0;
-  let slideInterval;
-  let touchStartX = 0;
-  let touchEndX = 0;
-  const swipeThreshold = 50;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevArrow = document.querySelector('.prev');
+    const nextArrow = document.querySelector('.next');
+    let currentSlide = 0;
+    let intervalId;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const carousel = document.querySelector('.carousel');
 
-  // Touch handlers
-  function handleTouchStart(e) {
-    touchStartX = e.changedTouches[0].screenX;
-  }
+    // Initialize the carousel
+    function initCarousel() {
+      // Set up the automatic slide transition
+      startAutoSlide();
+      
+      // Event listeners for dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+          resetAutoSlide();
+        });
+      });
 
-  function handleTouchEnd(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    const deltaX = touchEndX - touchStartX;
+      // Event listeners for arrows
+      prevArrow.addEventListener('click', () => {
+        goToPrevSlide();
+        resetAutoSlide();
+      });
 
-    if (Math.abs(deltaX) > swipeThreshold) {
-      if (deltaX > 0) {
-        changeSlide(currentSlide - 1);
-      } else {
-        changeSlide(currentSlide + 1);
-      }
-      clearInterval(slideInterval);
-      startSlideTimer();
+      nextArrow.addEventListener('click', () => {
+        goToNextSlide();
+        resetAutoSlide();
+      });
+
+      // Touch events for mobile swipe
+      carousel.addEventListener('touchstart', handleTouchStart, false);
+      carousel.addEventListener('touchmove', handleTouchMove, false);
+      carousel.addEventListener('touchend', handleTouchEnd, false);
     }
-  }
 
-  function changeSlide(n) {
-    const direction = n > currentSlide ? 'next' : 'prev';
-    
-    // Remove active class
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
+    // Go to a specific slide
+    function goToSlide(slideIndex) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      
+      currentSlide = slideIndex;
+      
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      }
+      
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
 
-    // Add direction classes
-    slides[currentSlide].classList.add(direction);
-    
-    // Update current slide
-    currentSlide = (n + slides.length) % slides.length;
-    
-    // Add new classes
-    slides[currentSlide].classList.add('active', direction);
-    dots[currentSlide].classList.add('active');
+    // Go to the next slide
+    function goToNextSlide() {
+      goToSlide(currentSlide + 1);
+    }
 
-    // Cleanup direction classes
-    setTimeout(() => {
-      slides.forEach(slide => slide.classList.remove('next', 'prev'));
-    }, 500);
-  }
+    // Go to the previous slide
+    function goToPrevSlide() {
+      goToSlide(currentSlide - 1);
+    }
 
-  // Event listeners
-  const carousel = document.querySelector('.carousel');
-  if (carousel) {
-    carousel.addEventListener('touchstart', handleTouchStart);
-    carousel.addEventListener('touchend', handleTouchEnd);
-    carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    carousel.addEventListener('mouseleave', startSlideTimer);
-  }
+    // Start automatic slideshow
+    function startAutoSlide() {
+      intervalId = setInterval(goToNextSlide, 5000);
+    }
 
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => changeSlide(index));
-  });
+    // Reset the automatic slideshow timer
+    function resetAutoSlide() {
+      clearInterval(intervalId);
+      startAutoSlide();
+    }
 
-  function startSlideTimer() {
-    slideInterval = setInterval(() => changeSlide(currentSlide + 1), 5000);
-  }
+    // Handle touch start event
+    function handleTouchStart(e) {
+      touchStartX = e.touches[0].clientX;
+    }
 
-  startSlideTimer();
-}
+    // Handle touch move event
+    function handleTouchMove(e) {
+      touchEndX = e.touches[0].clientX;
+    }
 
-// Rest of the existing script.js remains the same...
+    // Handle touch end event
+    function handleTouchEnd() {
+      const touchDiff = touchStartX - touchEndX;
+      
+      // If touch difference is significant enough to be considered a swipe
+      if (touchDiff > 50) {
+        // Swipe left, go to next slide
+        goToNextSlide();
+        resetAutoSlide();
+      } else if (touchDiff < -50) {
+        // Swipe right, go to previous slide
+        goToPrevSlide();
+        resetAutoSlide();
+      }
+      
+      // Reset touch coordinates
+      touchStartX = 0;
+      touchEndX = 0;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        goToPrevSlide();
+        resetAutoSlide();
+      } else if (e.key === 'ArrowRight') {
+        goToNextSlide();
+        resetAutoSlide();
+      }
+    });
+
+    // Initialize the carousel
+    initCarousel();
+
+
 
   // ===== Testimonials carousel functionality =====
 function initTestimonialsCarousel() {

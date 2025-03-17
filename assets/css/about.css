@@ -326,27 +326,5 @@
   }
   
 
-/* Override icon styling from other CSS files */
-/* .nav-right .icon a svg,
-.hamburger a svg {
-  fill: #000 !important;
-} */
-
-/* Override link styling from other CSS files */
-.nav-center a,
-.sidebar-menu a,
-.nav-right .icon a,
-.hamburger a {
-  color: #000 !important;
-  text-decoration: none !important;
-  transition: color 0.3s ease !important;
-}
-
-.nav-center a:hover,
-.sidebar-menu a:hover,
-.nav-right .icon a:hover,
-.hamburger a:hover {
-  color: #8B4513 !important;
-}
 
 
