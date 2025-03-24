@@ -3,7 +3,7 @@
     --habitique-primary-font: 'Raleway', sans-serif;
     --habitique-secondary-font: 'Raleway', sans-serif;
     --habitique-accent-color: #8B4513;
-    --habitique-bg-light: #f9f9f9;
+    --habitique-bg-light: #f8f5f2;
     --habitique-bg-dark: #fff;
   }
   
@@ -17,9 +17,8 @@
     font-family: var(--habitique-primary-font);
     line-height: 1.6;
     padding-top: 50px;
-
     color: #333;
-    background-color: var(--habitique-bg-dark);
+    background-color: var( --habitique-bg-light);
   }
   
   .habitique-intro, 

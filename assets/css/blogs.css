@@ -317,7 +317,7 @@ textarea:focus {
     background-color: var(--primary);
 }
 
-button:hover {
+.comments-section button:hover {
     transform: translateY(-0.125rem);
     background-color: var(--primary-dark);
     box-shadow: 0 0.25rem 0.5rem rgba(139, 69, 19, 0.14);

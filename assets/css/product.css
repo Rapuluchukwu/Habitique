@@ -8,7 +8,7 @@
 /* Global Styles */
 body {
   color: #333;
-  background-color: #cbaf9b0a;
+  background-color: #f8f5f2;
   padding-top: 120px !important;
 }
 
@@ -234,9 +234,8 @@ body {
 
 /* Main Cart Wrapper */
 .cart-wrapper {
-  width: 90%;
+  width: 100%;
   padding-bottom: 50px;
-  max-width: 100%;
   margin: 1.5rem auto 2rem auto;
   display: flex;
   flex-wrap: wrap;

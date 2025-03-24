@@ -2,13 +2,13 @@
 
 /* Main Container */
 .modern-footer {
-  font-family: 'Raleway', sans-serif;
   color: #8B4513;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
   padding: 0;
   background-color: #fff;
+  font-family: 'Raleway', sans-serif !important;
 }
 
 /* Content Wrapper */
