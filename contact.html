@@ -17,6 +17,20 @@
     <!-- header -->
     <script src="assets/js/header.js"></script>
 
+    <div class="alert-container" id="alertContainer">
+        <div class="alert alert-error hidden" id="errorAlert">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="errorMessage">Please fix the errors in the form!</span>
+            <button class="alert-close" id="closeErrorAlert"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="alert alert-success hidden" id="successAlert">
+            <i class="fas fa-check-circle"></i>
+            <span id="successMessage">Form submitted successfully!</span>
+            <button class="alert-close" id="closeSuccessAlert"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
     <main class="contact-container">
         <!-- Hero Section -->
         <section class="contact-hero">
@@ -92,7 +106,7 @@
                     <p>Have questions or want to collaborate? We'd love to hear from you.</p>
                 </div>
 
-                <form class="contact-form" action="" method="post">
+                <form class="contact-form" action="" method="post" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
@@ -101,7 +115,7 @@
 
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                            <input type="email" id="contact-email" name="email" placeholder="Your email" required>
                         </div>
                     </div>
 
@@ -147,8 +161,11 @@
     </main>
 
 
-    <!-- footer -->
-    <script src="assets/js/footer.js"></script>
+  
+<script src="assets/js/contact.js"></script>
+
+        <!-- footer -->
+        <script src="assets/js/footer.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

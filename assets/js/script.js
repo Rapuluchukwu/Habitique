@@ -1,67 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // -------------------------
-  // Utility functions
-  // -------------------------
+  // ====================================================
+  // Utility Functions
+  // ====================================================
   const utils = {
     toggleClass: (element, className = 'active') => element.classList.toggle(className),
     addClass: (element, className = 'active') => element.classList.add(className),
-    removeClass: (element, className = 'active') => element.classList.remove(className)
+    removeClass: (element, className = 'active') => element.classList.remove(className),
+    
+    // Disable page scrolling while preserving current scroll position
+    disableScroll: function() {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      document.body.setAttribute('data-scroll-position', scrollY);
+    },
+    
+    // Re-enable scrolling and restore the previous scroll position
+    enableScroll: function() {
+      const scrollY = parseInt(document.body.getAttribute('data-scroll-position') || '0', 10);
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
+    }
   };
 
-  // -------------------------
+  // ====================================================
   // Navigation & Sidebar
-  // -------------------------
+  // ====================================================
   function initNavigation() {
     const navElements = {
       hamburger: document.querySelector('.hamburger a'),
       closeBtn: document.querySelector('.close-btn a'),
       sidebar: document.querySelector('.sidebar'),
-      overlay: document.querySelector('.sidebar-overlay'),
-      dropdownToggles: document.querySelectorAll('.dropdown-toggle'),
-      heroSection: document.querySelector('.carousel')
+      overlay: document.querySelector('.sidebar-overlay') || (() => {
+        // Create overlay if not present
+        const overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        document.body.appendChild(overlay);
+        return overlay;
+      })(),
+      dropdownToggles: document.querySelectorAll('.sidebar .dropdown-toggle')
     };
 
+    // Toggle sidebar and overlay with scroll control
     function toggleSidebar(e) {
       if (e) e.preventDefault();
       [navElements.sidebar, navElements.overlay].forEach(el => el && el.classList.toggle('active'));
+      if (navElements.sidebar.classList.contains('active')) {
+        utils.disableScroll();
+      } else {
+        utils.enableScroll();
+      }
     }
 
-    if (navElements.hamburger) {
-      navElements.hamburger.addEventListener('click', toggleSidebar);
-    }
-    if (navElements.closeBtn) {
-      navElements.closeBtn.addEventListener('click', toggleSidebar);
-    }
-    if (navElements.overlay) {
-      navElements.overlay.addEventListener('click', toggleSidebar);
-    }
+    if (navElements.hamburger) navElements.hamburger.addEventListener('click', toggleSidebar);
+    if (navElements.closeBtn) navElements.closeBtn.addEventListener('click', toggleSidebar);
+    if (navElements.overlay) navElements.overlay.addEventListener('click', toggleSidebar);
 
-    // Handle sidebar dropdown toggles
+    // Toggle dropdown menus inside the sidebar
     navElements.dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', function(e) {
         e.preventDefault();
         this.classList.toggle('active');
-        const parent = this.closest('.has-dropdown');
-        const dropdown = parent.querySelector('.dropdown');
-        if (parent.closest('.sidebar-menu')) {
-          if (dropdown.classList.contains('show')) {
-            dropdown.classList.remove('show');
-          } else {
-            // Close any open dropdowns at the same level
-            parent.parentNode.querySelectorAll('.dropdown.show').forEach(sibling => {
-              if (sibling !== dropdown) {
-                sibling.classList.remove('show');
-                const siblingToggle = sibling.parentNode.querySelector('.dropdown-toggle');
-                if (siblingToggle) siblingToggle.classList.remove('active');
-              }
-            });
-            dropdown.classList.add('show');
-          }
-        }
+        const dropdown = this.nextElementSibling;
+        if (dropdown) dropdown.classList.toggle('show');
       });
     });
 
-    // Desktop: Show/hide dropdowns on hover
+    // Desktop: Show/hide dropdowns on hover (for nav-links)
     if (window.innerWidth >= 993) {
       document.querySelectorAll('.nav-links .has-dropdown').forEach(item => {
         item.addEventListener('mouseenter', function() {
@@ -74,20 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
     }
-
-    // Change hamburger icon color on scroll (only affects the icon, not main-nav)
-    window.addEventListener("scroll", function () {
-      const hamburgerIcon = document.querySelector(".hamburger svg");
-      const carousel = document.querySelector(".carousel");
-      if (!hamburgerIcon || !carousel) return;
-      const carouselHeight = carousel.offsetHeight;
-      hamburgerIcon.style.fill = window.scrollY > carouselHeight ? "black" : "currentColor";
-    });
   }
 
-  // -------------------------
+  // ====================================================
   // Main Carousel
-  // -------------------------
+  // ====================================================
   function initCarousel() {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function goToNextSlide() { goToSlide(currentSlide + 1); }
     function goToPrevSlide() { goToSlide(currentSlide - 1); }
+    
     function startAutoSlide() { intervalId = setInterval(goToNextSlide, 5000); }
     function resetAutoSlide() {
       clearInterval(intervalId);
@@ -142,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
     startAutoSlide();
   }
 
-  // -------------------------
+  // ====================================================
   // Testimonials Carousel
-  // -------------------------
+  // ====================================================
   function initTestimonialsCarousel() {
     const testimonialsCarousel = document.querySelector('.testimonials-carousel');
     const testimonialsTrack = document.querySelector('.testimonials-track');
@@ -153,7 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.testimonial-slide');
     if (!testimonialsCarousel || !testimonialsTrack || slides.length === 0) return;
 
-    const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight);
+    const slideWidth = slides[0].offsetWidth + parseInt(getComputedStyle(slides[0]).marginRight, 10);
+
     testimonialsCarousel.addEventListener('mouseenter', () => {
       testimonialsTrack.style.animationPlayState = 'paused';
     });
@@ -210,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 5000);
     }
 
-    // Also set up the reset timer after arrow clicks
+    // Reset after arrow clicks
     leftArrow && leftArrow.addEventListener('click', resetToAutoScroll);
     rightArrow && rightArrow.addEventListener('click', resetToAutoScroll);
 
@@ -245,9 +248,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // -------------------------
+  // ====================================================
   // Card Interactivity
-  // -------------------------
+  // ====================================================
   function initCards() {
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', function() {
@@ -257,9 +260,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // -------------------------
+  // ====================================================
   // Promo Banner System
-  // -------------------------
+  // ====================================================
   function initPromoBanner() {
     const bannerConfig = {
       initialDelay: 1000,
@@ -316,9 +319,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }, bannerConfig.initialDelay);
   }
 
-  // -------------------------
+  // ====================================================
   // Shop Items Functionality
-  // -------------------------
+  // ====================================================
   function initShopItems() {
     const itemData = [
       {
@@ -339,9 +342,9 @@ document.addEventListener('DOMContentLoaded', function() {
         brand: "Chaddock",
         price: 38.00,
         colors: [
-          { color: "#0d6efd", image: "assets/images/Chair-group2.blue.jpg" },
-          { color: "#dc3545", image: "assets/images/Chair-group2-red.jpg" },
-          { color: "#b0860f", image: "assets/images/Chair-group2-gold.jpg" }
+          { color: "#0d6efd", image: "assets/images/Chair-group2.blue.png" },
+          { color: "#dc3545", image: "assets/images/Chair-group2-red.png" },
+          { color: "#b0860f", image: "assets/images/Chair-group2-gold.png" }
         ],
         defaultColorIndex: 0
       },
@@ -351,9 +354,9 @@ document.addEventListener('DOMContentLoaded', function() {
         brand: "The Expert Vintage",
         price: 38.00,
         colors: [
-          { color: "#1a1a5e", image: "assets/images/Chair-group3-blue.jpg" },
-          { color: "#6d1a1a", image: "assets/images/Chair-group3-brown.jpg" },
-          { color: "#d63384", image: "assets/images/Chair-group3-pink.jpg" }
+          { color: "#1a1a5e", image: "assets/images/Chair-group3-blue.png" },
+          { color: "#6d1a1a", image: "assets/images/Chair-group3-brown.png" },
+          { color: "#d63384", image: "assets/images/Chair-group3-pink.png" }
         ],
         defaultColorIndex: 0
       },
@@ -363,8 +366,8 @@ document.addEventListener('DOMContentLoaded', function() {
         brand: "The Expert Vintage",
         price: 38.00,
         colors: [
-          { color: "#218380", image: "assets/images/Chair-group4-teal.jpg" },
-          { color: "#9c27b0", image: "assets/images/Chair-group4-purple.jpg" }
+          { color: "#218380", image: "assets/images/Chair-group4-teal.png" },
+          { color: "#9c27b0", image: "assets/images/Chair-group4-purple.png" }
         ],
         defaultColorIndex: 0
       }
@@ -379,10 +382,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const itemCard = document.createElement('div');
       itemCard.className = 'item';
       itemCard.id = 'prod-' + product.id;
+      
       const swatchesHTML = product.colors.map((colorOption, index) => {
         const activeClass = index === product.defaultColorIndex ? 'active' : '';
         return `<div class="swatch ${activeClass}" id="color-${product.id}-${index}" style="background-color: ${colorOption.color}" data-index="${index}"></div>`;
       }).join('');
+      
       const defaultImage = product.colors[product.defaultColorIndex].image;
       itemCard.innerHTML = `
         <div class="item-pic">
@@ -409,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.swatch').forEach(swatch => {
       swatch.addEventListener('click', function() {
         const productId = this.id.split('-')[1];
-        const colorIndex = parseInt(this.getAttribute('data-index'));
+        const colorIndex = parseInt(this.getAttribute('data-index'), 10);
         const product = allItems.find(item => item.id == productId);
         document.querySelectorAll(`#swatches-${productId} .swatch`).forEach(s => s.classList.remove('active'));
         this.classList.add('active');
@@ -419,14 +424,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // -------------------------
+  // ====================================================
   // Animations (Intersection Observer)
-  // -------------------------
+  // ====================================================
   function initAnimations() {
     const leftSlideCards = document.querySelectorAll('.slide-from-left');
     const rightSlideCards = document.querySelectorAll('.slide-from-right');
     if (!leftSlideCards.length && !rightSlideCards.length) return;
-    // Append keyframe definitions
+    
+    // Append keyframe definitions for slide animations
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes slideInFromLeft {
@@ -462,133 +468,96 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // -------------------------
-  // Modal Toggle
-  // -------------------------
+  // ====================================================
+  // Modal Toggle (Updated for All Login Icons)
+  // ====================================================
   function initModal() {
     const signinModal = document.getElementById('signin-modal');
-    const openSigninModal = document.getElementById('openSigninModal');
-    const closeModal = document.getElementById('closeModal');
     const modalContent = document.querySelector('.modal-content');
-    if (openSigninModal && signinModal) {
-      openSigninModal.addEventListener('click', function(e) {
+    
+    // Bind event to all login icons (desktop and sidebar)
+    document.querySelectorAll('.login-icon a').forEach(icon => {
+      icon.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        // Disable page scrolling
+        utils.disableScroll();
+        // Create and append overlay if it doesn't exist
+        let overlay = document.getElementById('signin-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.id = 'signin-overlay';
+          overlay.style.position = 'fixed';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+          overlay.style.zIndex = '9998';
+          document.body.appendChild(overlay);
+        } else {
+          overlay.classList.remove('hidden');
+        }
+        // Ensure modal appears above the overlay
+        signinModal.style.position = 'relative';
+        signinModal.style.zIndex = '9999';
         signinModal.classList.remove('hidden');
       });
+    });
+    
+    function togglePasswordVisibility(inputId, toggleElem) {
+      const input = document.getElementById(inputId);
+      const icon = toggleElem.querySelector('i');
+    
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
     }
+
+
     if (modalContent) {
-      modalContent.addEventListener('click', function(e) { e.stopPropagation(); });
-    }
-    if (closeModal && signinModal) {
-      closeModal.addEventListener('click', function(e) {
-        e.preventDefault();
-        signinModal.classList.add('hidden');
+      modalContent.addEventListener('click', function(e) { 
+        e.stopPropagation(); 
       });
     }
+    
+    // Close modal and restore scroll
+    function closeModalAndCleanup(e) {
+      if (e) e.preventDefault();
+      utils.enableScroll();
+      const overlay = document.getElementById('signin-overlay');
+      if (overlay) overlay.remove();
+      signinModal.classList.add('hidden');
+    }
+    
+    const closeModalBtn = document.getElementById('closeModal');
+    if (closeModalBtn && signinModal) {
+      closeModalBtn.addEventListener('click', closeModalAndCleanup);
+    }
+    
     window.addEventListener('click', function(e) {
       if (e.target === signinModal) {
-        signinModal.classList.add('hidden');
+        closeModalAndCleanup();
+      }
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !signinModal.classList.contains('hidden')) {
+        closeModalAndCleanup();
       }
     });
   }
+  
 
-  // -------------------------
-  // Register Form Functionality
-  // -------------------------
-  function initRegisterForm() {
-    function togglePasswordVisibility(inputId, toggleElement) {
-      const passwordInput = document.getElementById(inputId);
-      const icon = toggleElement.querySelector('i');
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-        toggleElement.setAttribute('aria-pressed', 'true');
-      } else {
-        passwordInput.type = 'password';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
-        toggleElement.setAttribute('aria-pressed', 'false');
-      }
-    }
-    function validatePassword(password) {
-      const requirements = {
-        length: password.length >= 8,
-        number: /[0-9]/.test(password),
-        case: /[A-Z]/.test(password) && /[a-z]/.test(password),
-        symbol: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)
-      };
-      document.getElementById('req-length').querySelector('.checkmark').classList.toggle('valid', requirements.length);
-      document.getElementById('req-number').querySelector('.checkmark').classList.toggle('valid', requirements.number);
-      document.getElementById('req-case').querySelector('.checkmark').classList.toggle('valid', requirements.case);
-      document.getElementById('req-symbol').querySelector('.checkmark').classList.toggle('valid', requirements.symbol);
-      let validCount = 0;
-      for (let key in requirements) { if (requirements[key]) validCount++; }
-      const strengthPercent = (validCount / 4) * 100;
-      const strengthBarFill = document.getElementById('strength-bar-fill');
-      strengthBarFill.style.width = strengthPercent + '%';
-      strengthBarFill.style.backgroundColor = strengthPercent <= 50 ? 'red' : (strengthPercent < 100 ? 'orange' : 'green');
-      return validCount === 4;
-    }
-    function validateEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-    document.getElementById('password').addEventListener('input', function() {
-      validatePassword(this.value);
-      document.getElementById('password-error').style.display = 'none';
-      const confirmPassword = document.getElementById('confirm-password').value;
-      if (confirmPassword) {
-        document.getElementById('confirm-password-error').style.display =
-          this.value === confirmPassword ? 'none' : 'block';
-      }
-    });
-    document.getElementById('confirm-password').addEventListener('input', function() {
-      const password = document.getElementById('password').value;
-      document.getElementById('confirm-password-error').style.display =
-        this.value === password ? 'none' : 'block';
-    });
-    document.getElementById('email').addEventListener('input', function() {
-      document.getElementById('email-error').style.display = 'none';
-    });
-    document.getElementById('first-name').addEventListener('input', function() {
-      document.getElementById('first-name-error').style.display = 'none';
-    });
-    document.getElementById('last-name').addEventListener('input', function() {
-      document.getElementById('last-name-error').style.display = 'none';
-    });
-    document.getElementById('register-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const firstName = document.getElementById('first-name').value;
-      const lastName = document.getElementById('last-name').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirm-password').value;
-      const termsChecked = document.getElementById('terms').checked;
-      let isValid = true;
-      if (!firstName.trim()) { document.getElementById('first-name-error').style.display = 'block'; isValid = false; }
-      if (!lastName.trim()) { document.getElementById('last-name-error').style.display = 'block'; isValid = false; }
-      if (!validateEmail(email)) { document.getElementById('email-error').style.display = 'block'; isValid = false; }
-      if (!validatePassword(password)) { document.getElementById('password-error').style.display = 'block'; isValid = false; }
-      if (password !== confirmPassword) { document.getElementById('confirm-password-error').style.display = 'block'; isValid = false; }
-      if (!termsChecked) { alert('You must agree to the Terms of Service and Privacy Policy.'); isValid = false; }
-      if (isValid) {
-        const submitBtn = document.getElementById('submit-btn');
-        const spinner = document.getElementById('spinner');
-        submitBtn.disabled = true;
-        spinner.style.display = 'inline-block';
-        setTimeout(function() {
-          alert('Registration successful!');
-          submitBtn.disabled = false;
-          spinner.style.display = 'none';
-        }, 2000);
-      }
-    });
-  }
-
-  // -------------------------
+  // ====================================================
   // Additional Features
-  // -------------------------
+  // ====================================================
   function loadGoogleFonts() {
     const fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
@@ -601,9 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
   }
@@ -621,9 +588,9 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => observer.observe(section));
   }
 
-  // -------------------------
+  // ====================================================
   // Initialize All Features
-  // -------------------------
+  // ====================================================
   function init() {
     initNavigation();
     initCarousel();
@@ -633,10 +600,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initShopItems();
     initAnimations();
     initModal();
-    initRegisterForm();
     loadGoogleFonts();
     initSmoothScroll();
     initSectionReveal();
+    togglePasswordVisibility();
   }
 
   init();

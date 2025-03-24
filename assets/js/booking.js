@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             DOM.bookingConfirmation.style.display = 'none';
             DOM.form.style.display = 'flex';
             DOM.form.reset();
-            // Clear all error messages
+            // Clear all inline error messages
             document.querySelectorAll('.error-message').forEach(el => {
                 el.textContent = '';
                 el.style.display = 'none';
@@ -84,10 +84,35 @@ document.addEventListener('DOMContentLoaded', () => {
             showAlert(DOM.successAlert);
             DOM.form.style.display = 'none';
         } else {
-            DOM.errorMessage.textContent = 'Please fix the errors in the form';
+            // Collect individual error messages from inline error elements
+            let errors = [];
+            Object.keys(DOM.validations).forEach(fieldId => {
+                const errorEl = document.getElementById(`${fieldId}Error`);
+                if (errorEl && errorEl.textContent.trim()) {
+                    errors.push(errorEl.textContent.trim());
+                }
+            });
+            // Also include error from contact method if present
+            const contactMethodErrorEl = document.getElementById('contactMethodError');
+            if (contactMethodErrorEl && contactMethodErrorEl.textContent.trim()) {
+                errors.push(contactMethodErrorEl.textContent.trim());
+            }
+            // Fallback generic message if no specific errors found
+            if (errors.length === 0) {
+                errors.push("Please fix the errors in the form");
+            }
+
+            // Build a bullet list from errors
+            let errorList = '<ul>';
+            errors.forEach(err => {
+                errorList += `<li>${err}</li>`;
+            });
+            errorList += '</ul>';
+
+            DOM.errorMessage.innerHTML = errorList;
             showAlert(DOM.errorAlert);
-            // Focus on the first field with an error
-            const firstErrorField = document.querySelector('input:invalid, select:invalid') || 
+            // Focus on the first invalid field
+            const firstErrorField = document.querySelector('input:invalid, select:invalid') ||
                                     document.querySelector('.error-message[style*="block"]')?.parentElement?.querySelector('input, select');
             if (firstErrorField) firstErrorField.focus();
         }
@@ -197,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }).join('');
 
         DOM.confirmationDetails.innerHTML = detailsHtml;
-        DOM.bookingConfirmation.style.display = 'block'; // Use style.display instead of classList
+        DOM.bookingConfirmation.style.display = 'block';
     }
 
     // Initialize the application

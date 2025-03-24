@@ -66,12 +66,12 @@ a:hover {
   top: 20px;
   right: 20px;
   max-width: 400px;
-  width: calc(100% - 40px);
   z-index: 1000;
+  width: calc(100% - 40px);
 }
 
 .alert {
-  padding: 15px 20px;
+  padding: 15px 10px;
   margin-bottom: 15px;
   border-radius: 8px;
   display: flex;
@@ -108,7 +108,7 @@ a:hover {
 
 .alert i {
   font-size: 18px;
-  margin-right: 10px;
+  margin-right: 25px;
 }
 
 .alert-error {
@@ -146,7 +146,7 @@ a:hover {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 /* Hero Section */
@@ -179,9 +179,11 @@ a:hover {
 }
 
 .booking-hero-content h1 {
-  font-size: 36px;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .booking-hero-content p {
@@ -267,10 +269,21 @@ a:hover {
 }
 
 .booking-form {
+  gap: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
+
+.instruction {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+.instruction .required {
+  font-size: 35px; 
+}
+
 
 .form-group {
   display: flex;
@@ -303,8 +316,8 @@ label {
   font-size: 16px;
 }
 
-.input-wrapper textarea + i {
-  top: 20px;
+.input-wrapper i.additional-info-icon {
+  top: 12%;
   transform: none;
 }
 
@@ -312,7 +325,7 @@ label {
 .input-wrapper select,
 .input-wrapper textarea {
   width: 100%;
-  padding: 12px 15px 12px 45px;
+  padding: 12px 15px 12px 35px;
   border: 1px solid var(--gray-medium);
   border-radius: 8px;
   font-size: 16px;
@@ -322,7 +335,7 @@ label {
 }
 
 .input-wrapper textarea {
-  resize: vertical;
+  resize: none;
   min-height: 120px;
   padding-top: 15px;
 }
@@ -420,10 +433,10 @@ label {
   margin-top: 10px;
 }
 
-.required-note {
+/* .required-note {
   font-size: 12px;
   color: var(--text-lighter);
-}
+} */
 
 /* Buttons */
 .submit-button {
@@ -483,7 +496,7 @@ label {
   padding: 20px;
   border-radius: 8px;
   text-align: left;
-  margin: 20px 0;
+  margin: 20px auto;
   line-height: 1.8;
 }
 
@@ -506,8 +519,8 @@ label {
 }
 
 .secondary-button {
-  background-color: var(--white);
-  color: var(--primary);
+  background-color: var(--primary);
+  color: var(--off-white);
   border: 2px solid var(--primary);
   border-radius: 8px;
   padding: 12px 25px;
@@ -523,7 +536,8 @@ label {
 }
 
 .secondary-button:hover {
-  background-color: var(--primary-light);
+  background-color: var(--off-white);
+  color: var(--primary);
 }
 
 /* Responsive Styles */
@@ -573,17 +587,26 @@ label {
   }
   
   .booking-hero-content h1 {
-    font-size: 28px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .booking-hero-content p {
+    max-width: 300px;
   }
   
   .radio-options {
-    flex-direction: column;
     gap: 10px;
+    flex-direction: column;
   }
   
   .alert-container {
     max-width: calc(100% - 20px);
     right: 10px;
+  }
+
+  .alert span {
+    font-size: 12px;
   }
 }
 
@@ -610,6 +633,3 @@ label {
   }
 }
 
-form, textarea {
-  resize: none !important;
-}

@@ -44,6 +44,7 @@
 
         <section class="booking-container">
             <div class="booking-wrapper">
+                <!-- Booking Info Section -->
                 <div class="booking-info">
                     <div class="booking-heading">
                         <h2>Design Consultation Booking</h2>
@@ -51,6 +52,7 @@
                     </div>
 
                     <div class="booking-features">
+                        <!-- Existing Features -->
                         <div class="feature-item">
                             <i class="fas fa-clock"></i>
                             <div>
@@ -65,6 +67,35 @@
                                 <p>Professional advice from certified designers</p>
                             </div>
                         </div>
+                        <!-- New Features -->
+                        <div class="feature-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <div>
+                                <h3>Budget Planning Assistance</h3>
+                                <p>Optimize your budget for the best design results</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h3>Follow-Up Support</h3>
+                                <p>Post-session check-in for any additional questions</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-video"></i>
+                            <div>
+                                <h3>Virtual or In-Person Option</h3>
+                                <p>Choose the consultation format that suits you best</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tag"></i>
+                            <div>
+                                <h3>Exclusive Discounts</h3>
+                                <p>Special offers on selected furniture or design services</p>
+                            </div>
+                        </div>
                         <div class="feature-item">
                             <i class="fas fa-home"></i>
                             <div>
@@ -72,11 +103,35 @@
                                 <p>Receive a custom design approach after your session</p>
                             </div>
                         </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chair"></i>
+                            <div>
+                                <h3>Material &amp; Furniture Recommendations</h3>
+                                <p>Tailored suggestions for furniture, décor, and materials</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cube"></i>
+                            <div>
+                                <h3>3D Room Visualization</h3>
+                                <p>Basic 3D mockup of the proposed design for a clearer vision</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-images"></i>
+                            <div>
+                                <h3>Mood Board &amp; Style Guide</h3>
+                                <p>A curated visual representation of styles, colors, and materials</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+
                 <div class="booking-form-container">
                     <form id="habitiqueBookingForm" class="booking-form" novalidate>
+  <p class="instruction"><span class="required">*</span> Required fields</p>
+
                         <div class="form-group">
                             <label for="fullName">Full Name <span class="required">*</span></label>
                             <div class="input-wrapper">
@@ -156,7 +211,7 @@
                         <div class="form-group">
                             <label for="message">Additional Information</label>
                             <div class="input-wrapper">
-                                <i class="fas fa-comment"></i>
+                                <i class="fas fa-comment additional-info-icon"></i>
                                 <textarea id="message" name="message"
                                     placeholder="Share details about your space and design goals" rows="4"></textarea>
                             </div>
@@ -193,7 +248,7 @@
                         </div>
 
                         <div class="form-footer">
-                            <p class="required-note"><span class="required">*</span> Required fields</p>
+                            <!-- <p class="required-note"><span class="required">*</span> Required fields</p> -->
                             <button type="submit" class="submit-button">
                                 <span>Book Your Consultation</span>
                                 <i class="fas fa-arrow-right"></i>

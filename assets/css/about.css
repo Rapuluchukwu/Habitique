@@ -193,7 +193,7 @@
   }
   
   /* Media Section */
-  .habitique-media-header {
+   /* .habitique-media-header {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 4rem;
@@ -266,7 +266,7 @@
     justify-content: center;
     transform: translateX(-50%);
     background: rgba(139, 69, 19, 0.8);
-  }
+  } */
   
   /* Features Section */
   .habitique-features {

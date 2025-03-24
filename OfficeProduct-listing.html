@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Listing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/product.css" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+
+  <!-- header -->
+  <script src="assets/js/header.js"></script>
+
+  <!-- Main Content Wrapper -->
+  <div class="content-wrapper">
+
+    <!-- Page Title / Heading -->
+    <div class="page-heading">
+      <h1>Office Space Collection</h1>
+      <p>Showing 1-9 of 18 results</p>
+    </div>
+
+    <!-- Top Controls: Sort -->
+    <div class="top-controls">
+      <div class="sort-by">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select">
+          <option value="popularity">Popularity</option>
+          <option value="rating">Average rating</option>
+          <option value="newness">Newness</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Example product card repeated 9 times -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+1" alt="Office Space 1" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+2" alt="Office Space 2" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+3" alt="Office Space 3" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+4" alt="Office Space 4" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+5" alt="Office Space 5" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+6" alt="Office Space 6" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+7" alt="Office Space 7" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+8" alt="Office Space 8" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/250x150?text=Office+9" alt="Office Space 9" />
+        </div>
+        <div class="product-info">
+          <h3>Office Space</h3>
+          <p class="price">$125.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">Next</a>
+    </div>
+
+  </div>
+
+  <script src="assets/js/product.js"></script>
+
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
