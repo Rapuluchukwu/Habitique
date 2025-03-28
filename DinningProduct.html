@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dinning Product Listing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/product.css"/>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+
+  <!-- header -->
+  <script src="assets/js/header.js"></script>
+
+  <!-- Main Content Wrapper -->
+  <div class="content-wrapper2">
+
+    <!-- Page Title / Heading -->
+    <div class="page-heading">
+      <h1>Dinning Room Collection</h1>
+      <!-- <p>Showing 1-9 of 18 results</p> -->
+    </div>
+
+    <!-- Top Controls: Sort -->
+    <div class="top-controls">
+      <div class="sort-by">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select">
+          <option value="popularity">Popularity</option>
+          <option value="rating">Average rating</option>
+          <option value="newness">Newness</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Example product card repeated 9 times -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning1.webp" alt="Krakatoa Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Krakatoa Dining Table</h3>
+          <p class="price">$2,290</p>
+          <button onclick="addToCart('Krakatoa Dining Table', '$2,290', 'assets/images/dinning1.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning2.webp" alt="Riviera 2400 Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Riviera 2400 Dining Table</h3>
+          <p class="price">$3,999 <del style="font-weight: 500; color: #d3b38d;">$7,999</del></p>
+          <button onclick="addToCart('Riviera 2400 Dining Table', '$3,999', 'assets/images/dinning2.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning3.webp" alt="Nexion 2000 Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Nexion 2000 Dining Table</h3>
+          <p class="price">$1,299.00 <del style="font-weight: 500; color: #d3b38d;">$1,699</del></p>
+          <button onclick="addToCart('Nexion 2000 Dining Table', '$1,299.00', 'assets/images/dinning3.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning4.webp" alt="Seville Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Seville Dining Table</h3>
+          <p class="price">$1,499.00 <del style="font-weight: 500; color: #d3b38d;">$2,699</del></p>
+          <button onclick="addToCart('Seville Dining Table', '$1,499.00', 'assets/images/dinning4.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning5.webp" alt="Surrey Round Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Surrey Round Dining Table</h3>
+          <p class="price">$899.00 <del style="font-weight: 500; color: #d3b38d;">$1,499</del></p>
+          <button onclick="addToCart('Surrey Round Dining Table', '$899.00', 'assets/images/dinning5.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning6.webp" alt="Minimalist Vintage Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>Minimalist Vintage Dining Set</h3>
+          <p class="price">$3,250.00</p>
+          <button onclick="addToCart('Minimalist Vintage Dining Set', '$3,250.00', 'assets/images/dinning6.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning7.webp" alt="San Francisco Vintage Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>San Francisco Vintage Dining Set</h3>
+          <p class="price">$6,690.00 <del style="font-weight: 500; color: #d3b38d;">$10,690.00</del></p>
+          <button onclick="addToCart('San Francisco Vintage Dining Set', '$6,690.00', 'assets/images/dinning7.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning8.webp" alt="Belgravia Intimacy Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>Belgravia Intimacy Dining Set</h3>
+          <p class="price">$2,550.00</p>
+          <button onclick="addToCart('Belgravia Intimacy Dining Set', '$2,550.00', 'assets/images/dinning8.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/dinning9.webp" alt="Juni 1400 Dining Table - White" />
+        </div>
+        <div class="product-info">
+          <h3>Juni 1400 Dining Table - White</h3>
+          <p class="price">$2,499.00 <del style="font-weight: 500; color: #d3b38d;">$4,999.00</del></p>
+          <button onclick="addToCart('Juni 1400 Dining Table - White', '$2,499.00', 'assets/images/dinning9.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <!-- <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">Next</a>
+    </div> -->
+
+  </div>
+
+
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

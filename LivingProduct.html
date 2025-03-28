@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Living Product Listing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/product.css"/>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+
+  <!-- header -->
+  <script src="assets/js/header.js"></script>
+
+  <!-- Main Content Wrapper -->
+  <div class="content-wrapper2">
+
+    <!-- Page Title / Heading -->
+    <div class="page-heading">
+      <h1>Living Room Collection</h1>
+      <!-- <p>Showing 1-9 of 18 results</p> -->
+    </div>
+
+    <!-- Top Controls: Sort -->
+    <div class="top-controls">
+      <div class="sort-by">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select">
+          <option value="popularity">Popularity</option>
+          <option value="rating">Average rating</option>
+          <option value="newness">Newness</option>
+          <option value="price-low">Price: low to high</option>
+          <option value="price-high">Price: high to low</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living1.webp" alt="Krakatoa Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Valletta Corner Modular with RHS Chaise - Mystique Biscoff</h3>
+          <p class="price">$7,999 <del style="font-weight: 500; color: #d3b38d;">$13,499</del></p>
+          <button onclick="addToCart('Valletta Corner Modular with RHS Chaise - Mystique Biscoff', '$7,999', 'assets/images/living1.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living2.webp" alt="Riviera 2400 Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Cleo Marble Coffee Table</h3>
+          <p class="price">$699 <del style="font-weight: 500; color: #d3b38d;">$799</del></p>
+          <button onclick="addToCart('Cleo Marble Coffee Table', '$699', 'assets/images/living2.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living3.webp" alt="Nexion 2000 Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Maya Couples Chair - Optical</h3>
+          <p class="price">$1,999.00</p>
+          <button onclick="addToCart('Maya Couples Chair - Optical', '$1,999.00', 'assets/images/living3.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living4.webp" alt="Seville Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Axel Full Modular Lounge - Grey Gum</h3>
+          <p class="price">$4,198.00 <del style="font-weight: 500; color: #d3b38d;">$7,798</del></p>
+          <button onclick="addToCart('Axel Full Modular Lounge - Grey Gum', '$4,198.00', 'assets/images/living4.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 5 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living5.webp" alt="Surrey Round Dining Table" />
+        </div>
+        <div class="product-info">
+          <h3>Lucia 3 Seater Sofa - Sky Blue</h3>
+          <p class="price">$1,999.00 <del style="font-weight: 500; color: #d3b38d;">$2,799</del></p>
+          <button onclick="addToCart('Lucia 3 Seater Sofa - Sky Blue', '$1,999.00', 'assets/images/living5.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 6 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living6.webp" alt="Minimalist Vintage Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>Marcelo 2 Door 2 Niche Entertainment Unit</h3>
+          <p class="price">$1,499.00</p>
+          <button onclick="addToCart('Marcelo 2 Door 2 Niche Entertainment Unit', '$1,499.00', 'assets/images/living6.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 7 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living7.webp" alt="San Francisco Vintage Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>Alaska RHS Chaise Lounge - Milano Optical</h3>
+          <p class="price">$3,649.00 <del style="font-weight: 500; color: #d3b38d;">$5,649.00</del></p>
+          <button onclick="addToCart('Alaska RHS Chaise Lounge - Milano Optical', '$3,649.00', 'assets/images/living7.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 8 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living8.webp" alt="Belgravia Intimacy Dining Set" />
+        </div>
+        <div class="product-info">
+          <h3>San Francisco Livingroom Set</h3>
+          <p class="price">$3,000.00</p>
+          <button onclick="addToCart('San Francisco Livingroom Set', '$3,000.00', 'assets/images/living8.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product Card 9 -->
+      <div class="product-card" onclick="goToProductPage()">
+        <div class="product-image">
+          <img src="assets/images/living9.webp" alt="Juni 1400 Dining Table - White" />
+        </div>
+        <div class="product-info">
+          <h3>White Vintage coffee table &amp; 3 seater sofa - colorful throw pillows</h3>
+          <p class="price">$4,499.00 <del style="font-weight: 500; color: #d3b38d;">$6,999.00</del></p>
+          <button onclick="addToCart('White Vintage coffee table & 3 seater sofa - colorful throw pillows', '$4,499.00', 'assets/images/living9.webp', event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <!-- <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">Next</a>
+    </div> -->
+
+  </div>
+
+
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
