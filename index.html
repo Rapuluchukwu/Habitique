@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
@@ -25,7 +29,7 @@
       <img src="assets/images/hero1.webp" alt="sofa" class="slide-image" />
       <div class="slide-content">
         <h1 class="slide-title">MADE FOR LOUNGING</h1>
-        <a href="" class="download-btn">SHOP NOW</a>
+        <a href="LivingProduct.html" class="download-btn">SHOP LOUNGES</a>
       </div>
     </div>
     <!-- Slide 2 -->
@@ -33,15 +37,15 @@
       <img src="assets/images/Hero2.jpg" alt="decor" class="slide-image" />
       <div class="slide-content">
         <h1 class="slide-title">LIKE WHAT YOU SEE?</h1>
-        <a href="booking.html"class="download-btn">BOOK A DESIGNER NOW!</a>
+        <a href="booking.html" class="download-btn">BOOK A DESIGNER NOW!</a>
       </div>
     </div>
     <!-- Slide 3 -->
     <div class="slide">
       <img src="assets/images/hero3.webp" alt="bed" class="slide-image" />
       <div class="slide-content">
-        <h1 class="slide-title">WHAT'S NEW?</h1>
-        <a href="" class="download-btn">SHOP NOW</a>
+        <h1 class="slide-title">COMFORT THAT MEANS BUSINESS</h1>
+        <a href="" class="download-btn">BROWSE ALL OFFICE FURNITURE</a>
       </div>
     </div>
     <!-- Dots -->
@@ -54,12 +58,12 @@
     <div class="carousel-arrows">
       <div class="arrow prev">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
         </svg>
       </div>
       <div class="arrow next">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
         </svg>
       </div>
     </div>
@@ -81,30 +85,28 @@
       <div class="card office-space">
         <a href="OfficeProduct-listing.html">
           <img src="assets/images/office-space.jpg" alt="Office Space">
+          <h2 class="card-title">OFFICE SPACE</h2>
         </a>
-        <a href="OfficeProduct-listing.html">
-        <h2 class="card-title">OFFICE SPACE</h2>
-      </a>
       </div>
       <div class="card living-room">
-        <a href="product-listing.html">
+        <a href="LivingProduct.html">
           <img src="assets/images/living-room.jpg" alt="Living Room">
+          <h2 class="card-title">LIVING ROOM</h2>
         </a>
-        <h2 class="card-title">LIVING ROOM</h2>
       </div>
       <div class="card dining-room">
-        <a href="product-listing.html">
+        <a href="DinningProduct.html">
           <img src="assets/images/Dinning-room.jpg" alt="Dining Room">
+          <h2 class="card-title">DINING ROOM</h2>
         </a>
-        <h2 class="card-title">DINING ROOM</h2>
       </div>
     </div>
   </div>
 
+  <!-- Featured products -->
   <div class="main-wrap">
-    <h1 class="page-title">FEATURED PRODUCTS</h1>
+    <h1 class="page-title">LIMITED EDITION FEATURED PRODUCTS</h1>
     <div class="items-grid" id="shopItems">
-      <!-- Products will be added here by JavaScript -->
     </div>
   </div>
 
@@ -155,35 +157,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Service Section -->
-  <!-- <section class="services-container"> -->
-  <!-- Left Column -->
-  <!-- <div class="service-box left">
-      <div class="service-icon"><i class="fas fa-thumbs-up"></i></div>
-      <h3>100% Satisfaction Guaranteed</h3>
-      <p>Our quality's designed to embrace—each piece a blend of art and grace.</p>
-    </div> -->
-  <!-- Center Column -->
-  <!-- <div class="center-column"> -->
-  <!-- <div class="service-box">
-        <div class="service-icon"><i class="fas fa-headset"></i></div>
-        <h3>24/7 Online Service</h3>
-        <p>We're here day or night, keeping your decor just right.</p>
-      </div>
-      <div class="service-box">
-        <div class="service-icon"><i class="fas fa-truck"></i></div>
-        <h3>Fast Delivery</h3>
-        <p>Quick as a flash, we bring style to your place in a dash.</p>
-      </div>
-    </div> -->
-  <!-- Right Column -->
-  <!-- <div class="service-box right"> -->
-  <!-- <div class="service-icon"><i class="fas fa-lock"></i></div>
-      <h3>Payment With Secure System</h3>
-      <p>Safe transactions set the base—trust and ease in every case.</p>
-    </div>
-  </section> -->
 
   <!-- Educational Blog Posts Section -->
   <section class="blog-posts-section">
@@ -237,51 +210,6 @@
             <a href="color-psychology.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
-
-        <!-- Blog Post 4 -->
-        <!-- <article class="blog-card slide-from-right">
-          <div class="blog-image">
-            <a href="small-spaces.html">
-              <img src="assets/images/blog images/small-spaces.webp" alt="Maximizing Small Spaces">
-            </a>
-          </div>
-          <div class="blog-content">
-            <h3 class="blog-title">Maximizing Small Spaces</h3>
-            <p class="blog-excerpt">Smart solutions and multi-functional furniture ideas to transform compact living
-              areas into stylish, efficient spaces.</p>
-            <a href="small-spaces.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article> -->
-
-        <!-- Blog Post 5 -->
-        <!-- <article class="blog-card slide-from-left">
-          <div class="blog-image">
-            <a href="blogs/seasonal-decor.html">
-              <img src="assets/images/blog images/seasonal-decor.webp" alt="Seasonal Decor Transitions">
-            </a>
-          </div>
-          <div class="blog-content">
-            <h3 class="blog-title">Seasonal Decor Transitions</h3>
-            <p class="blog-excerpt">Simple ways to update your home's look and feel with the changing seasons without a
-              complete redesign.</p>
-            <a href="seasonal-decor.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article> -->
-
-        <!-- Blog Post 6 -->
-        <!-- <article class="blog-card slide-from-right">
-          <div class="blog-image">
-            <a href="lighting-design.html">
-              <img src="assets/images/blog images/lighting-design.webp" alt="Lighting Design Fundamentals">
-            </a>
-          </div>
-          <div class="blog-content">
-            <h3 class="blog-title">Lighting Design Fundamentals</h3>
-            <p class="blog-excerpt">Master the art of layered lighting to enhance functionality, create atmosphere, and
-              highlight your home's best features.</p>
-            <a href="lighting-design.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article> -->
       </div>
 
       <div class="view-all-blogs">
@@ -395,7 +323,9 @@
         Discount 20% for New members, <span>ONLY FOR TODAY!!</span>
       </p>
       <div class="promo-buttons">
-        <button id="shop-now-btn">Shop Now</button>
+        <a href="LivingProduct.html">
+          <button id="shop-now-btn">Shop Now</button>
+        </a>
         <button class="close-btn" id="close-banner">×</button>
       </div>
     </div>

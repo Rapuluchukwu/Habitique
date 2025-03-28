@@ -58,7 +58,7 @@ document.write(`
            <div class="newsletter-wrapper">
              <form class="newsletter-form">
                <div class="newsletter-input-container">
-                 <input type="email" placeholder="Your email address" required>
+                 <input type="email" placeholder="Email address" required>
                  <button type="submit" class="subscribe-btn">Subscribe</button>
                </div>
              </form>
